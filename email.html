@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Оставить почту — Уникалисты</title>
+  <meta name="description" content="Оставь почту — расскажем о старте побега, встречах тусовки и раннем доступе к Уникализатору. Без спама.">
+  <link rel="icon" type="image/png" href="assets/y-acid.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-email">
+
+  <nav class="nav" aria-label="Главная навигация">
+    <div class="nav-in">
+      <a class="nav-logo" href="index.html" aria-label="Уникалисты — на главную">
+        <img src="assets/y-acid.png" alt="Уникалисты">
+      </a>
+    </div>
+  </nav>
+
+  <main class="email-main">
+    <div class="wrap">
+      <div class="email-box">
+        <a class="back" href="index.html">← На главную</a>
+        <span class="chip">Почта</span>
+        <h1 style="margin-top: 20px;">Узнай о старте первым</h1>
+        <p class="lead muted">Напишем, когда откроется набор на побег, появится дата живой встречи или заработает Уникализатор. Никаких цепочек и прогревов — одно письмо, когда есть что сказать.</p>
+
+        <!-- Чтобы форма реально собирала почты: заведи форму на formspree.io
+             и замени YOUR_FORM_ID в action ниже. Пока ID не заменён,
+             отправка обрабатывается локально (показывается подтверждение). -->
+        <form class="email-form" id="emailForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <label for="email" class="sr-only" style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0);">Твоя почта</label>
+          <input type="email" id="email" name="email" placeholder="Твоя почта" required autocomplete="email" inputmode="email">
+          <button class="btn" type="submit" id="submitBtn">Отправить</button>
+        </form>
+        <p class="email-note">Отписаться можно в одно нажатие, обид не будет.</p>
+
+        <div class="email-success" id="successBox" role="status" aria-live="polite">
+          <p>Готово. Напишем, когда появится что-то стоящее твоего времени.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-row">
+        <img src="assets/y-acid.png" alt="">
+        <span>© 2026 Уникалисты · Роман Гришин</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.getElementById("emailForm");
+    const successBox = document.getElementById("successBox");
+    const submitBtn = document.getElementById("submitBtn");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Отправляем…";
+
+      const isConfigured = !form.action.includes("YOUR_FORM_ID");
+      let ok = true;
+
+      if (isConfigured) {
+        try {
+          const res = await fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+            headers: { Accept: "application/json" },
+          });
+          ok = res.ok;
+        } catch {
+          ok = false;
+        }
+      }
+
+      if (ok) {
+        form.style.display = "none";
+        document.querySelector(".email-note").style.display = "none";
+        successBox.style.display = "block";
+      } else {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Отправить";
+        alert("Не получилось отправить. Попробуй ещё раз чуть позже.");
+      }
+    });
+  </script>
+
+</body>
+</html>
