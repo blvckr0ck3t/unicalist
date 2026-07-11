@@ -29,10 +29,10 @@
         <h1 style="margin-top: 20px;">Узнай о старте первым</h1>
         <p class="lead muted">Напишем, когда откроется набор на побег, появится дата живой встречи или заработает Уникализатор. Никаких цепочек и прогревов — одно письмо, когда есть что сказать.</p>
 
-        <!-- Чтобы форма реально собирала почты: заведи форму на formspree.io
-             и замени YOUR_FORM_ID в action ниже. Пока ID не заменён,
-             отправка обрабатывается локально (показывается подтверждение). -->
-        <form class="email-form" id="emailForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <!-- Сбор почт в Google Таблицу. Как настроить — см. Настройка_сбора_почты.md
+             в корне проекта. После настройки замени YOUR_SCRIPT_URL на URL веб-приложения
+             из Apps Script. Пока не заменён — форма показывает подтверждение, но не сохраняет. -->
+        <form class="email-form" id="emailForm" action="https://script.google.com/macros/s/AKfycbxSYI1Tc9A7ZyHe2GEdT0HxUAN778xr4moOz_j5wXmmenLCz_NXBTW3DZ_1ygkDrcVxGw/exec" method="POST">
           <label for="email" class="sr-only" style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0);">Твоя почта</label>
           <input type="email" id="email" name="email" placeholder="Твоя почта" required autocomplete="email" inputmode="email">
           <button class="btn" type="submit" id="submitBtn">Отправить</button>
@@ -65,17 +65,18 @@
       submitBtn.disabled = true;
       submitBtn.textContent = "Отправляем…";
 
-      const isConfigured = !form.action.includes("YOUR_FORM_ID");
+      const isConfigured = !form.action.includes("YOUR_SCRIPT_URL");
       let ok = true;
 
       if (isConfigured) {
         try {
-          const res = await fetch(form.action, {
+          // Apps Script не отдаёт CORS-заголовки, поэтому no-cors:
+          // ответ непрозрачный, но запись в таблицу происходит.
+          await fetch(form.action, {
             method: "POST",
             body: new FormData(form),
-            headers: { Accept: "application/json" },
+            mode: "no-cors",
           });
-          ok = res.ok;
         } catch {
           ok = false;
         }
