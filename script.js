@@ -126,21 +126,7 @@
     });
   });
 
-  /* ── 4. Магнитные кнопки ── */
-
-  document.querySelectorAll(".btn").forEach((btn) => {
-    btn.addEventListener("mousemove", (e) => {
-      const r = btn.getBoundingClientRect();
-      const x = (e.clientX - r.left - r.width / 2) / (r.width / 2);
-      const y = (e.clientY - r.top - r.height / 2) / (r.height / 2);
-      btn.style.transform = `translate(${x * 5}px, ${y * 4}px)`;
-    });
-    btn.addEventListener("mouseleave", () => {
-      btn.style.transform = "";
-    });
-  });
-
-  /* ── 5. Параллакс в hero ── */
+  /* ── 4. Параллакс в hero ── */
 
   const wordmark = document.querySelector(".hero-wordmark");
   const stairs = document.querySelector(".pixel-stairs");

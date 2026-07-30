@@ -47,7 +47,9 @@
     </div>
   </nav>
 
-  <!-- ── Шапка ── -->
+  <!-- ── Шапка ──
+       Плашки-надзаголовка нет: страница подписана мелким блоком слева сверху,
+       заголовок стоит внизу, на горах. Разные секции начинаются по-разному. -->
   <header class="about-hero">
     <div class="about-hero__scene" aria-hidden="true">
       <svg viewBox="0 0 1440 320" preserveAspectRatio="none" shape-rendering="crispEdges" focusable="false">
@@ -71,22 +73,20 @@
 <g fill="#7a8239"><rect x="944" y="32" width="16" height="16"/><rect x="960" y="16" width="16" height="16"/><rect x="992" y="-16" width="16" height="16"/></g>
       </svg>
     </div>
-    <div class="wrap">
-      <span class="chip">Как со мной можно поработать</span>
-      <h1>Занимайся тем, что тебе нравится, — и этого <span class="hl">достаточно</span></h1>
-      <p class="lead">Ко мне приходят, чтобы увидеть дальше обычного.</p>
-      <p class="about-hero__sig">Роман Гришин · предприниматель · практик внутренней работы</p>
+    <div class="wrap about-hero__in">
+      <p class="about-hero__mark">Роман Гришин<span>Практик внутренней работы</span></p>
+      <div class="about-hero__body">
+        <h1>Занимайся тем, что тебе нравится,<br>— и этого достаточно.</h1>
+        <p class="lead">Ко мне приходят, чтобы увидеть дальше обычного.</p>
+      </div>
     </div>
   </header>
 
-  <!-- ── Обо мне ── -->
+  <!-- Обо мне: секция открывается самой фразой, без надзаголовка -->
   <section class="section" id="me">
     <div class="wrap">
-      <div class="section-head">
-        <span class="chip">Обо мне</span>
-        <h2>Почти сорок лет я считал, что со мной что-то не так</h2>
-        <p class="lead muted">Это было моим самым большим заблуждением.</p>
-      </div>
+      <h2 class="statement">Почти сорок лет я считал, что со мной что-то не так</h2>
+      <p class="lead muted statement-after">Это было моим самым большим заблуждением.</p>
 
       <div class="about">
         <div class="about-photo">
@@ -102,14 +102,11 @@
     </div>
   </section>
 
-  <!-- ── Во что я верю ── -->
+  <!-- Во что я верю: вход — две колонки текста под одной крупной фразой -->
   <section class="section">
     <div class="wrap">
-      <div class="section-head">
-        <span class="chip">Во что я верю</span>
-        <h2>Успех измеряется <span class="hl">счастьем</span></h2>
-      </div>
-      <div class="col2">
+      <h2 class="statement statement--wide">Успех измеряется счастьем</h2>
+      <div class="col2 col2--belief">
         <div>
           <p>Когда человек занимается тем, что ему по-настоящему нравится, он становится счастливым. Он зарабатывает улыбающиеся деньги и распространяет вокруг себя удовлетворение, а не напряжение.</p>
           <p>И это чувствуется — в услуге, в продукте, во всём, что он делает. Получить что-то, созданное человеком на своём месте, — отдельная ценность.</p>
@@ -122,11 +119,10 @@
     </div>
   </section>
 
-  <!-- ── За чем ко мне приходят ── -->
+  <!-- Три вещи: вход — сразу карточки, фраза уходит вправо от них -->
   <section class="section">
     <div class="wrap">
-      <div class="section-head">
-        <span class="chip">За чем ко мне приходят</span>
+      <div class="three-open">
         <h2>Запросы разные — почти всегда про три вещи</h2>
       </div>
 
@@ -148,7 +144,7 @@
         </div>
       </div>
 
-      <div class="col2 col2--ruled">
+      <div class="col2 col2--after">
         <div>
           <h3>Что ещё происходит</h3>
           <p>Ты видишь свои повторяющиеся привычки мышления и поведения, паттерны, убеждения, которые мешают жить, непрожитые эмоции — всё то, что тебя держит, — и освобождаешься от этого. Во время сессии приходят инсайты.</p>
@@ -161,11 +157,10 @@
     </div>
   </section>
 
-  <!-- ── Это не психология ── -->
+  <!-- Это не психология: вход — отрицание слева, пояснение справа на одной линии -->
   <section class="section">
     <div class="wrap">
-      <div class="section-head">
-        <span class="chip">Подход</span>
+      <div class="deny">
         <h2>Это не психология</h2>
         <p class="lead muted">Психология смотрит в прошлое. Мы можем коснуться причин, но работаем в основном с настоящим и будущим.</p>
       </div>
@@ -201,7 +196,7 @@
         </figure>
       </div>
 
-      <div class="col2 col2--ruled">
+      <div class="col2 col2--after">
         <div>
           <h3>Сессия — про тебя</h3>
           <p>Я не даю советов и не говорю, что делать. Я задаю вопросы и отвечаю за процесс ведения.</p>
@@ -214,31 +209,27 @@
     </div>
   </section>
 
-  <!-- ── Немного фактов ── -->
+  <!-- Факты: заголовка нет вообще, секция открывается самими цифрами -->
   <section class="section">
     <div class="wrap">
-      <div class="section-head">
-        <span class="chip">Немного фактов</span>
-        <h2>Я прошёл сам всё то, о чём говорю</h2>
-      </div>
       <div class="facts">
-          <div class="fact"><span class="fact-n">250 млн ₽</span><span class="card-num">Выручка в год</span><p>Бизнес, который я основал. Сейчас я в совете управляющих и стратегическим консультантом.</p></div>
-          <div class="fact"><span class="fact-n">3000+</span><span class="card-num">Часов медитации</span><p>За плечами.</p></div>
-          <div class="fact"><span class="fact-n">Вышел</span><span class="card-num">Из операционки</span><p>Передал управление партнёру и команде, внедрил культуру изменений и работу со стратегией.</p></div>
-          <div class="fact"><span class="fact-n">Диплом</span><span class="card-num">Эриксоновский коуч</span><p>Одна из методологий, на которые я опираюсь.</p></div>
-          <div class="fact"><span class="fact-n">21,1 км</span><span class="card-num">Полумарафон</span><p>Про то же самое: делать своё — и доходить.</p></div>
+        <div class="fact"><span class="fact-n">250 млн ₽</span><span class="fact-k">выручка в год</span><p>Бизнес, который я основал. Сейчас я в совете управляющих и стратегическим консультантом.</p></div>
+        <div class="fact"><span class="fact-n">3000+</span><span class="fact-k">часов медитации</span><p>За плечами.</p></div>
+        <div class="fact"><span class="fact-n">Вышел</span><span class="fact-k">из операционки</span><p>Передал управление партнёру и команде, внедрил культуру изменений и работу со стратегией.</p></div>
+        <div class="fact"><span class="fact-n">Диплом</span><span class="fact-k">эриксоновский коуч</span><p>Одна из методологий, на которые я опираюсь.</p></div>
+        <div class="fact"><span class="fact-n">21,1 км</span><span class="fact-k">полумарафон</span><p>Про то же самое: делать своё — и доходить.</p></div>
       </div>
-      <p class="facts-foot muted">От операционки в бизнесе до тишины на подушке для медитации.</p>
+      <p class="facts-foot">Я прошёл сам всё то, о чём говорю, — от операционки в бизнесе до тишины на подушке для медитации.</p>
     </div>
   </section>
 
-  <!-- ── Мой главный кейс ── -->
+  <!-- Кейс: вход — огромные два слова, подпись под ними -->
   <section class="section">
     <div class="wrap">
       <div class="case">
         <div class="case-head">
-          <span class="card-num">Мой главный кейс</span>
           <h2>Я сам</h2>
+          <p class="case-k">Мой главный кейс</p>
         </div>
         <div class="case-text">
           <p>Когда у предпринимателя появляется желание выйти из операционки, чаще всего это значит, что он не на своём месте — занимается не тем. Я был таким предпринимателем.</p>
@@ -251,12 +242,9 @@
     </div>
   </section>
 
-  <!-- ── Кому со мной по пути ── -->
+  <!-- Кому по пути: заголовка секции нет, сразу две колонки -->
   <section class="section">
     <div class="wrap">
-      <div class="section-head">
-        <span class="chip">Кому со мной по пути</span>
-      </div>
       <div class="fit">
         <h3 class="fit-h">Тебе со мной по пути, если ты</h3>
         <h3 class="fit-h fit-h--no">Нам не по пути, если ты ждёшь</h3>
@@ -270,7 +258,7 @@
     </div>
   </section>
 
-  <!-- ── Приглашение ── -->
+  <!-- Приглашение -->
   <section class="invite">
     <div class="invite__horizon" aria-hidden="true">
       <svg viewBox="0 0 1440 160" preserveAspectRatio="none" shape-rendering="crispEdges" focusable="false">

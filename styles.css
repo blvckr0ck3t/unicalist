@@ -123,7 +123,7 @@ p { margin: 0; }
     16px 100%, 16px calc(100% - 8px), 8px calc(100% - 8px), 8px calc(100% - 16px), 0 calc(100% - 16px),
     0 16px, 8px 16px, 8px 8px, 16px 8px
   );
-  transition: transform 0.18s ease, background 0.18s ease, clip-path 0.16s ease;
+  transition: background 0.18s ease, clip-path 0.16s ease;
 }
 
 /* ховер: лесенки складываются — кнопка становится строгим квадратом
@@ -270,7 +270,18 @@ p { margin: 0; }
 
 .section { padding: clamp(72px, 10vh, 128px) 0; }
 
-.section + .section { border-top: 1px solid var(--border); }
+/* Разделитель секций: не сплошной хайрлайн, а перфорация по модулю --px,
+   тем же языком, что кнопки, маркеры и горы. */
+.section + .section {
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--border) 0 4px,
+    transparent 4px 8px
+  );
+  background-size: 100% 2px;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
 
 .section-head { margin-bottom: 48px; }
 .section-head .chip { margin-bottom: 20px; }
@@ -578,23 +589,22 @@ p { margin: 0; }
 .email-success p { color: var(--light); }
 
 /* ── Страница «Как со мной можно поработать» ──
-   Тот же charcoal + лайм + Manrope. Горы, туман и знаки перерисованы
-   по пиксельной сетке --px, поэтому у всех SVG shape-rendering: crispEdges. */
-
-.hl { color: var(--lime); }
-
-.page-about h2 .hl { color: var(--lime); }
+   Каждая секция начинается по-своему: где-то сразу фраза, где-то две колонки,
+   где-то цифры без заголовка. Одинаковых «плашка + заголовок» на странице нет. */
 
 /* Шапка */
 
-/* Сцена рисуется во всю ширину окна и держит собственную пропорцию 1440×320,
-   поэтому её высота — ровно 22.22vw; на неё и рассчитан нижний паддинг. */
 .about-hero {
   position: relative;
   overflow: hidden;
-  padding: clamp(56px, 9vh, 104px) 0 calc(22.22vw + clamp(32px, 5vh, 64px));
+  min-height: calc(100svh - 73px);
+  display: flex;
+  flex-direction: column;
+  padding: clamp(40px, 6vh, 72px) 0 calc(22.22vw + clamp(24px, 4vh, 48px));
 }
 
+/* Сцена держит собственную пропорцию 1440×320 — её высота ровно 22.22vw,
+   на неё и рассчитан нижний паддинг. */
 .about-hero__scene {
   position: absolute;
   left: 0;
@@ -605,21 +615,55 @@ p { margin: 0; }
 
 .about-hero__scene svg { width: 100%; height: auto; display: block; }
 
-.about-hero .wrap { position: relative; z-index: 1; }
-
-.about-hero .chip { margin-bottom: 24px; }
-
-.about-hero h1 { max-width: 900px; margin-bottom: 22px; }
-
-.about-hero .lead { margin-bottom: 32px; }
-
-.about-hero__sig {
-  color: var(--gray);
-  text-transform: uppercase;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
+.about-hero__in {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
+
+/* подпись страницы — мелким блоком сверху, а не плашкой над заголовком */
+.about-hero__mark {
+  font-weight: 800;
+  font-size: 17px;
+  letter-spacing: 0.01em;
+}
+
+.about-hero__mark span {
+  display: block;
+  margin-top: 4px;
+  color: var(--gray);
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.about-hero__body { margin-top: auto; }
+
+/* Размер подобран так, чтобы фраза держалась ровно в двух строках
+   на всей ширине контейнера: три коротких строки читаются как лесенка. */
+.about-hero h1 {
+  font-size: clamp(26px, 3.55vw, 51px);
+  margin-bottom: 22px;
+}
+.about-hero .lead { color: var(--gray); }
+
+/* Секция, которая открывается самой фразой */
+
+.statement {
+  max-width: 20ch;
+  margin-bottom: 14px;
+}
+
+.statement--wide { max-width: 16ch; margin-bottom: clamp(32px, 5vh, 52px); }
+
+.statement-after { margin-bottom: 0; }
+
+/* Три вещи */
+
+.three-open { margin-bottom: clamp(36px, 5vh, 56px); }
+.three-open h2 { max-width: 20ch; }
 
 /* Две колонки текста */
 
@@ -632,13 +676,8 @@ p { margin: 0; }
 .col2 p { color: var(--gray); margin-bottom: 14px; }
 .col2 p:last-child { margin-bottom: 0; }
 
-.col2--ruled {
-  margin-top: clamp(36px, 6vh, 56px);
-  padding-top: 32px;
-  border-top: 1px solid var(--border);
-}
-
-.col2--ruled h3 { margin-bottom: 12px; }
+.col2--after { margin-top: clamp(44px, 7vh, 76px); }
+.col2--after h3 { margin-bottom: 12px; }
 
 /* Знаки у трёх карточек */
 
@@ -660,7 +699,18 @@ p { margin: 0; }
   margin-top: 6px;
 }
 
-/* Схема «взгляд с горы» */
+/* Это не психология */
+
+.deny {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(20px, 4vw, 56px);
+  align-items: end;
+  margin-bottom: clamp(40px, 6vh, 64px);
+}
+
+.deny h2 { max-width: 12ch; }
+.deny .lead { margin-bottom: 0; }
 
 .view {
   display: grid;
@@ -684,7 +734,7 @@ p { margin: 0; }
   letter-spacing: 0.02em;
 }
 
-/* Факты */
+/* Факты — секция без заголовка, открывается самими цифрами */
 
 .facts {
   display: grid;
@@ -697,18 +747,25 @@ p { margin: 0; }
   font-weight: 800;
   font-size: clamp(26px, 2.5vw, 32px);
   line-height: 1;
-  letter-spacing: -0.02em;
-  margin-bottom: 14px;
+  letter-spacing: -0.01em;
+  margin-bottom: 12px;
 }
 
-.fact .card-num { display: block; margin-bottom: 8px; }
+/* подпись факта — обычным регистром: капс с разрядкой оставлен заголовкам и кнопкам */
+.fact-k {
+  display: block;
+  color: var(--light);
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
 .fact p { color: var(--gray); font-size: 15px; }
 
 .facts-foot {
-  margin-top: clamp(32px, 5vh, 48px);
-  padding-top: 24px;
-  border-top: 1px solid var(--border);
+  margin-top: clamp(40px, 6vh, 60px);
   max-width: 720px;
+  color: var(--gray);
 }
 
 /* Мой главный кейс */
@@ -720,19 +777,25 @@ p { margin: 0; }
   align-items: start;
 }
 
-.case-head .card-num { display: block; }
 .case h2 { font-size: clamp(46px, 7vw, 88px); line-height: 0.92; }
+
+.case-k {
+  margin-top: 14px;
+  color: var(--gray);
+  font-size: 15px;
+  font-weight: 600;
+}
+
 .case-text p { color: var(--gray); margin-bottom: 16px; }
 .case-text p:first-child { color: var(--light); }
 
 .case-note {
   margin-top: 28px !important;
-  padding-top: 16px;
-  border-top: 1px solid var(--border);
   font-size: 14px;
 }
 
-/* Кому по пути */
+/* Кому по пути — линии здесь несут смысл: держат строки двух колонок
+   на одних направляющих. Поэтому не хайрлайн, а перфорация по модулю 8px. */
 
 .fit {
   display: grid;
@@ -740,11 +803,7 @@ p { margin: 0; }
   gap: 0 clamp(20px, 4vw, 64px);
 }
 
-.fit-h {
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--border);
-}
-
+.fit-h { padding-bottom: 16px; }
 .fit-h--no { color: var(--gray); }
 
 .fit-i {
@@ -752,23 +811,38 @@ p { margin: 0; }
   gap: 14px;
   align-items: flex-start;
   padding: 18px 0;
-  border-bottom: 1px solid var(--border);
   font-size: 16px;
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--border) 0 4px,
+    transparent 4px 8px
+  );
+  background-size: 100% 2px;
+  background-position: 0 0;
+  background-repeat: no-repeat;
 }
+
+.fit-h { background: none; }
 
 .fit-i svg { flex: none; width: 14px; height: 14px; margin-top: 6px; }
 .fit-i--yes svg { color: var(--lime); }
 .fit-i--no { color: var(--gray); }
 .fit-i--no svg { color: var(--gray); }
 
-/* Приглашение */
+/* Приглашение. Гряда на горизонте: пропорция 1440×160 — высота 11.11vw. */
 
-/* Гряда на горизонте: пропорция 1440×160 — высота 11.11vw. */
 .invite {
   position: relative;
   overflow: hidden;
-  border-top: 1px solid var(--border);
   padding: clamp(72px, 11vh, 132px) 0 calc(11.11vw + clamp(40px, 6vh, 72px));
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--border) 0 4px,
+    transparent 4px 8px
+  );
+  background-size: 100% 2px;
+  background-position: 0 0;
+  background-repeat: no-repeat;
 }
 
 .invite__horizon {
@@ -793,35 +867,29 @@ p { margin: 0; }
   display: inline-block;
   margin-top: 18px;
   color: var(--lime);
-  font-weight: 800;
-  font-size: 15px;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+  font-weight: 700;
+  font-size: 16px;
   text-decoration: none;
-  border-bottom: 2px solid transparent;
-  transition: border-color 0.2s ease;
+  transition: color 0.2s ease;
 }
 
-.about-more:hover { border-bottom-color: var(--lime); }
+.about-more:hover { color: var(--light); }
 
-/* Текущая страница в навигации */
+/* Текущая страница в навигации — весом и цветом, без подчёркивания */
 
-.nav-links a[aria-current="page"] { color: var(--light); }
-.nav-links a[aria-current="page"]::after { transform: scaleX(1); }
+.nav-links a[aria-current="page"] { color: var(--light); font-weight: 800; }
 
 /* ── Эффекты (script.js) ── */
 
-/* появление при скролле */
+/* Появление при скролле. Непрозрачность НЕ трогаем: контент виден всегда.
+   Если скрипт не отработал — фоновая вкладка, тротлинг, скриншот, отключённый
+   JS, — на странице ничего не пропадает, блок просто стоит на месте. */
 .reveal {
-  opacity: 0;
-  transform: translateY(22px);
-  transition: opacity 0.55s ease, transform 0.55s ease;
+  transform: translateY(16px);
+  transition: transform 0.55s ease;
 }
 
-.reveal.in {
-  opacity: 1;
-  transform: none;
-}
+.reveal.in { transform: none; }
 
 /* пиксельный след за курсором */
 .pixel-dot {
@@ -852,7 +920,7 @@ p { margin: 0; }
   pointer-events: none;
   background: radial-gradient(
     220px circle at var(--mx, 50%) var(--my, 50%),
-    rgba(232, 255, 43, 0.07),
+    rgba(240, 240, 240, 0.05),
     transparent 65%
   );
   transition: opacity 0.3s ease;
@@ -860,35 +928,14 @@ p { margin: 0; }
 
 .card:hover::after, .not-for:hover::after { opacity: 1; }
 
-.card { transition: border-color 0.3s ease; }
-.card:hover { border-color: rgba(232, 255, 43, 0.28); }
-
-/* магнитные кнопки: transform ведёт JS, плавность — здесь */
-.btn { will-change: transform; }
+.card { transition: background 0.3s ease; }
+.card:hover { background: #333333; }
 
 /* параллакс hero */
 .hero-wordmark, .pixel-stairs {
   transition: transform 0.25s ease-out;
   will-change: transform;
 }
-
-/* подчёркивание-пиксель у ссылок навигации */
-.nav-links a:not(.nav-cta) { position: relative; }
-
-.nav-links a:not(.nav-cta)::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  height: 2px;
-  width: 100%;
-  background: var(--lime);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.22s ease;
-}
-
-.nav-links a:not(.nav-cta):hover::after { transform: scaleX(1); }
 
 /* ── Адаптив ── */
 
@@ -965,9 +1012,6 @@ p { margin: 0; }
     font-size: 16px;
     border-top: 1px solid var(--border);
   }
-
-  /* пиксельное подчёркивание из десктопа в столбце не нужно */
-  .nav-links a::after { display: none; }
   .btn { width: 100%; text-align: center; }
   .hero-actions { flex-direction: column; }
 
@@ -1032,6 +1076,14 @@ p { margin: 0; }
 
   /* about.html: обычный поток, без скролл-снапа */
   .col2 { grid-template-columns: 1fr; }
+  /* на узком экране принудительный перенос только добавляет рваных строк —
+     пусть фраза ложится сама */
+  .about-hero h1 br { display: none; }
+
+  /* высота в целый экран на телефоне даёт провал между подписью и заголовком:
+     шапка сжимается по содержимому */
+  .about-hero { min-height: 0; }
+  .about-hero__body { margin-top: clamp(56px, 14vh, 110px); }
   .mark { width: 48px; height: 48px; margin-bottom: 16px; }
   .facts { gap: 28px; }
   .case-head { margin-bottom: 20px; }
@@ -1051,8 +1103,7 @@ p { margin: 0; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .btn, .nav-links a { transition: none; }
-  .btn:hover { transform: none; }
-  .reveal { opacity: 1; transform: none; transition: none; }
+  .reveal { transform: none; transition: none; }
   .pixel-dot { display: none; }
   .hero-wordmark, .pixel-stairs { transition: none; }
 }
