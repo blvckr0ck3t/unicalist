@@ -306,6 +306,110 @@ p { margin: 0; }
 .card--b ul li::before { background: var(--lime); }
 .card--b ul { color: var(--light); }
 
+/* карточка-ссылка: на главной и в блоках «куда дальше» */
+
+.card--link {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card--link p { flex: 1; }
+
+.card-go {
+  display: inline-block;
+  margin-top: 20px;
+  color: var(--lime);
+  font-weight: 800;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.card--link:hover { border-color: rgba(232, 255, 43, 0.5); }
+
+/* ── Шапка страницы продукта ── */
+
+.prod-hero {
+  padding: clamp(48px, 8vh, 88px) 0 clamp(40px, 7vh, 72px);
+  border-bottom: 1px solid var(--border);
+}
+
+.prod-hero .back { margin-bottom: 32px; }
+.prod-hero .chip { margin-bottom: 22px; }
+.prod-hero h1 { margin-bottom: 20px; }
+.prod-hero .lead { margin-bottom: 0; }
+.prod-hero .hero-actions { margin-top: 32px; }
+
+/* ссылка «назад» — на страницах продуктов и на email */
+
+.back {
+  display: block;
+  width: fit-content;
+  color: var(--gray);
+  text-decoration: none;
+  font-size: 15px;
+}
+.back:hover { color: var(--light); }
+
+/* ── Кейс-история ── */
+
+.story {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: clamp(28px, 4vw, 56px);
+  align-items: start;
+}
+
+.story-side {
+  position: sticky;
+  top: 96px;
+  border-left: 4px solid var(--lime);
+  padding-left: 20px;
+}
+
+.story-fact + .story-fact {
+  margin-top: 26px;
+  padding-top: 26px;
+  border-top: 1px solid var(--border);
+}
+
+.story-fact p { color: var(--gray); font-size: 15px; }
+.story-fact .fact-n { margin-bottom: 8px; }
+
+.story-body p { color: var(--gray); margin-bottom: 16px; }
+.story-body a { color: var(--lime); }
+
+.story-lead {
+  color: var(--light) !important;
+  font-size: clamp(18px, 2vw, 21px);
+}
+
+.story-h {
+  margin-top: 36px;
+  margin-bottom: 14px;
+  color: var(--light);
+}
+
+.story-out {
+  margin-top: 36px;
+  padding: 26px;
+  background: var(--charcoal-2);
+  border: 1px solid var(--border);
+}
+
+.story-out h3 { margin-bottom: 16px; }
+.story-out p:last-child { margin-bottom: 0; }
+.story-out strong { color: var(--light); font-weight: 800; }
+
+.story-note {
+  margin-top: 28px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  font-size: 14px;
+}
+
 /* ── Блок «обо мне» ── */
 
 .about {
@@ -318,6 +422,9 @@ p { margin: 0; }
   background: var(--charcoal-2);
   border: 1px solid var(--border);
 }
+
+/* тот же блок, но как самостоятельная секция — без отступа сверху */
+.about--flush { margin-top: 0; }
 
 .about-photo {
   position: relative;
@@ -392,6 +499,13 @@ p { margin: 0; }
   margin-top: 48px;
   padding-top: 40px;
   border-top: 1px solid var(--border);
+}
+
+/* та же полоса, но под собственным заголовком секции */
+.no-promises--flush {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
 }
 
 .no-promises p strong {
@@ -502,15 +616,7 @@ p { margin: 0; }
 
 .email-box { max-width: 560px; }
 
-.email-box .back {
-  display: block;
-  width: fit-content;
-  color: var(--gray);
-  text-decoration: none;
-  font-size: 15px;
-  margin-bottom: 40px;
-}
-.email-box .back:hover { color: var(--light); }
+.email-box .back { margin-bottom: 40px; }
 
 .email-box h1 { font-size: clamp(30px, 4.5vw, 46px); margin-bottom: 18px; }
 .email-box .lead { margin-bottom: 36px; font-size: 18px; }
@@ -891,14 +997,38 @@ p { margin: 0; }
   .view { grid-template-columns: 1fr; }
   .view-fig { max-width: 520px; margin-top: 8px; }
   .case { grid-template-columns: 1fr; }
+
+  /* кейс-история: цифры уходят наверх в строку */
+  .story { grid-template-columns: 1fr; }
+  .story-side {
+    position: static;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    border-left: none;
+    border-top: 4px solid var(--lime);
+    padding-left: 0;
+    padding-top: 20px;
+  }
+  .story-fact + .story-fact {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+  }
 }
 
 @media (max-width: 640px) {
   body { font-size: 16px; }
   .grid--2, .grid--4, .no-promises { grid-template-columns: 1fr; }
   .grid { gap: 14px; }
-  .nav-links a:not(.nav-cta) { display: none; }
   .pixel-stairs { display: none; }
+
+  /* Навигация: со страницами продуктов ссылки нужны и на телефоне,
+     поэтому прячем не их, а кнопку — CTA есть в каждой секции ниже. */
+  .nav-in { gap: 12px; padding: 12px 16px; }
+  .nav-links { gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
+  .nav-links a:not(.nav-cta) { font-size: 13px; }
+  .nav-links .nav-cta { display: none; }
   .btn { width: 100%; text-align: center; }
   .hero-actions { flex-direction: column; }
 
@@ -960,6 +1090,13 @@ p { margin: 0; }
   .about-socials a { padding: 9px 12px; font-size: 14px; }
   .list-plain li { padding: 13px 0; font-size: 15px; }
   .no-promises { margin-top: 28px; padding-top: 24px; gap: 14px; }
+
+  /* страницы продуктов */
+  .prod-hero .back { margin-bottom: 24px; }
+  .story-side { grid-template-columns: 1fr 1fr; }
+  .story-lead { font-size: 17px; }
+  .story-out { padding: 20px; }
+  .card-go { margin-top: 16px; }
 
   /* about.html: обычный поток, без скролл-снапа */
   .col2 { grid-template-columns: 1fr; }
