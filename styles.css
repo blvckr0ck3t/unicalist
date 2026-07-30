@@ -934,8 +934,8 @@ p { margin: 0; }
      Без JS ссылки просто переносятся на вторую строку и остаются доступны.
      С JS — сворачиваются в панель под кнопку-бургер. */
   .nav-in { flex-wrap: wrap; gap: 10px 16px; }
-  .nav-logo { order: 0; }
-  .nav-cta { order: 1; margin-left: auto; }
+  .nav-logo { order: 0; margin-right: auto; }
+  .nav-cta { order: 1; }
   .nav-toggle { order: 2; }
   .nav-links { order: 3; }
 

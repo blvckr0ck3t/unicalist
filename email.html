@@ -31,6 +31,18 @@
       <a class="nav-logo" href="index.html" aria-label="Уникалисты — на главную">
         <img src="assets/y-acid.png" alt="Уникалисты">
       </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+        <svg class="i-open" viewBox="0 0 5 5" shape-rendering="crispEdges" fill="currentColor" aria-hidden="true" focusable="false"><rect x="0" y="0" width="1" height="1"/><rect x="1" y="0" width="1" height="1"/><rect x="2" y="0" width="1" height="1"/><rect x="3" y="0" width="1" height="1"/><rect x="4" y="0" width="1" height="1"/><rect x="0" y="2" width="1" height="1"/><rect x="1" y="2" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="3" y="2" width="1" height="1"/><rect x="4" y="2" width="1" height="1"/><rect x="0" y="4" width="1" height="1"/><rect x="1" y="4" width="1" height="1"/><rect x="2" y="4" width="1" height="1"/><rect x="3" y="4" width="1" height="1"/><rect x="4" y="4" width="1" height="1"/></svg>
+        <svg class="i-close" viewBox="0 0 5 5" shape-rendering="crispEdges" fill="currentColor" aria-hidden="true" focusable="false"><rect x="0" y="0" width="1" height="1"/><rect x="4" y="0" width="1" height="1"/><rect x="1" y="1" width="1" height="1"/><rect x="3" y="1" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="1" y="3" width="1" height="1"/><rect x="3" y="3" width="1" height="1"/><rect x="0" y="4" width="1" height="1"/><rect x="4" y="4" width="1" height="1"/></svg>
+        <span class="sr-only">Меню</span>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html#concept">Концепция</a>
+        <a href="index.html#escape">Побег</a>
+        <a href="index.html#crew">Тусовка</a>
+        <a href="index.html#unikalizator">Уникализатор</a>
+        <a href="about.html">Обо мне</a>
+      </div>
     </div>
   </nav>
 
@@ -46,7 +58,7 @@
              в корне проекта. После настройки замени YOUR_SCRIPT_URL на URL веб-приложения
              из Apps Script. Пока не заменён — форма показывает подтверждение, но не сохраняет. -->
         <form class="email-form" id="emailForm" action="https://script.google.com/macros/s/AKfycbxSYI1Tc9A7ZyHe2GEdT0HxUAN778xr4moOz_j5wXmmenLCz_NXBTW3DZ_1ygkDrcVxGw/exec" method="POST">
-          <label for="email" class="sr-only" style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0);">Твоя почта</label>
+          <label for="email" class="sr-only">Твоя почта</label>
           <input type="email" id="email" name="email" placeholder="Твоя почта" required autocomplete="email" inputmode="email">
           <button class="btn" type="submit" id="submitBtn">Отправить</button>
         </form>
@@ -106,6 +118,8 @@
       }
     });
   </script>
+
+  <script src="script.js" defer></script>
 
 </body>
 </html>
