@@ -701,6 +701,48 @@ p { margin: 0; }
   font-size: 14px;
 }
 
+/* Отзывы */
+
+.quotes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(30px, 4vw, 52px) clamp(24px, 4vw, 56px);
+  align-items: start;
+}
+
+.quote {
+  position: relative;
+  margin: 0;
+  padding-top: 26px;
+  border-top: 1px solid var(--border);
+}
+
+/* лаймовый пиксель на линии — тот же приём, что у хвоста .chip */
+.quote::before {
+  content: "";
+  position: absolute;
+  top: calc(var(--px) * -1);
+  left: 0;
+  width: var(--px);
+  height: var(--px);
+  background: var(--lime);
+}
+
+.quote blockquote {
+  margin: 0;
+  font-size: clamp(16px, 1.5vw, 18px);
+  line-height: 1.55;
+}
+
+.quote figcaption {
+  margin-top: 18px;
+  color: var(--lime);
+  font-weight: 800;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
 /* Кому по пути */
 
 .fit {
@@ -965,6 +1007,7 @@ p { margin: 0; }
   .col2 { grid-template-columns: 1fr; }
   .mark { width: 48px; height: 48px; margin-bottom: 16px; }
   .facts { gap: 28px; }
+  .quotes { grid-template-columns: 1fr; }
   .case-head { margin-bottom: 20px; }
   .fit { grid-template-columns: 1fr; }
   .fit-h { order: 1; }
