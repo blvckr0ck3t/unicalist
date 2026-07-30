@@ -189,7 +189,38 @@ p { margin: 0; }
 
 .nav-links a:hover { color: var(--light); }
 
+/* кнопка мобильного меню: на десктопе не нужна */
+.nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-right: -10px;
+  padding: 0;
+  background: none;
+  border: none;
+  color: var(--light);
+  cursor: pointer;
+}
+
+.nav-toggle svg { width: 20px; height: 20px; display: block; }
+.nav-toggle .i-close { display: none; }
+.nav-toggle[aria-expanded="true"] .i-open { display: none; }
+.nav-toggle[aria-expanded="true"] .i-close { display: block; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 .nav-cta {
+  text-decoration: none;
   background: var(--lime);
   color: var(--charcoal) !important;
   font-weight: 800;
@@ -897,8 +928,46 @@ p { margin: 0; }
   body { font-size: 16px; }
   .grid--2, .grid--4, .no-promises { grid-template-columns: 1fr; }
   .grid { gap: 14px; }
-  .nav-links a:not(.nav-cta) { display: none; }
   .pixel-stairs { display: none; }
+
+  /* ── Мобильное меню ──
+     Без JS ссылки просто переносятся на вторую строку и остаются доступны.
+     С JS — сворачиваются в панель под кнопку-бургер. */
+  .nav-in { flex-wrap: wrap; gap: 10px 16px; }
+  .nav-logo { order: 0; }
+  .nav-cta { order: 1; margin-left: auto; }
+  .nav-toggle { order: 2; }
+  .nav-links { order: 3; }
+
+  .js .nav-toggle { display: inline-flex; }
+
+  /* без JS: компактная вторая строка, липкая шапка не разрастается */
+  .nav-links {
+    width: 100%;
+    margin-left: 0;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+  }
+
+  /* с JS: панель-столбец, скрытая до нажатия */
+  .js .nav-links {
+    display: none;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .js .nav-links.is-open { display: flex; }
+
+  .js .nav-links a {
+    padding: 14px 0;
+    font-size: 16px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* пиксельное подчёркивание из десктопа в столбце не нужно */
+  .nav-links a::after { display: none; }
   .btn { width: 100%; text-align: center; }
   .hero-actions { flex-direction: column; }
 

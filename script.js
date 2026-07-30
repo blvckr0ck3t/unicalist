@@ -5,6 +5,39 @@
   const fine = window.matchMedia("(pointer: fine)").matches;
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  /* ── 0. Мобильное меню ── */
+
+  const navToggle = document.querySelector(".nav-toggle");
+  const navLinks = document.getElementById("nav-links");
+
+  if (navToggle && navLinks) {
+    const setOpen = (open) => {
+      navToggle.setAttribute("aria-expanded", String(open));
+      navLinks.classList.toggle("is-open", open);
+    };
+
+    navToggle.addEventListener("click", () => {
+      setOpen(navToggle.getAttribute("aria-expanded") !== "true");
+    });
+
+    // переход по якорю на этой же странице меню не перезагружает — закрываем сами
+    navLinks.addEventListener("click", (e) => {
+      if (e.target.closest("a")) setOpen(false);
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && navToggle.getAttribute("aria-expanded") === "true") {
+        setOpen(false);
+        navToggle.focus();
+      }
+    });
+
+    // возврат на десктоп: панель не должна остаться открытой
+    window.matchMedia("(min-width: 641px)").addEventListener("change", (e) => {
+      if (e.matches) setOpen(false);
+    });
+  }
+
   /* ── 1. Появление при скролле (работает и без мыши) ── */
 
   const revealTargets = document.querySelectorAll(
