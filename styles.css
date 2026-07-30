@@ -694,11 +694,34 @@ p { margin: 0; }
 .case-text p { color: var(--gray); margin-bottom: 16px; }
 .case-text p:first-child { color: var(--light); }
 
-.case-note {
-  margin-top: 28px !important;
+/* Что говорят */
+
+.quote {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.quote-mark {
+  width: 24px;
+  height: 16px;
+  margin-bottom: 18px;
+  color: var(--olive);
+}
+
+.quote blockquote { margin: 0; flex: 1; }
+
+.quote p { color: var(--light); font-size: 16px; }
+
+.quote figcaption {
+  margin-top: 20px;
   padding-top: 16px;
   border-top: 1px solid var(--border);
+  color: var(--lime);
+  font-weight: 800;
   font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 /* Кому по пути */
@@ -891,6 +914,8 @@ p { margin: 0; }
   .view { grid-template-columns: 1fr; }
   .view-fig { max-width: 520px; margin-top: 8px; }
   .case { grid-template-columns: 1fr; }
+  /* отзывы читаются короткими колонками — 3 → 2, а не сразу в одну */
+  .quotes { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 640px) {
@@ -966,6 +991,8 @@ p { margin: 0; }
   .mark { width: 48px; height: 48px; margin-bottom: 16px; }
   .facts { gap: 28px; }
   .case-head { margin-bottom: 20px; }
+  .quotes { grid-template-columns: 1fr; }
+  .quote-mark { margin-bottom: 14px; }
   .fit { grid-template-columns: 1fr; }
   .fit-h { order: 1; }
   .fit-i--yes { order: 2; }
