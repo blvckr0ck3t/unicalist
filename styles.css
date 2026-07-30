@@ -734,6 +734,18 @@ p { margin: 0; }
   line-height: 1.55;
 }
 
+/* итоговая цитата — во всю ширину, крупнее остальных */
+.quote--lead {
+  grid-column: 1 / -1;
+  margin-top: clamp(6px, 1.5vh, 16px);
+}
+
+.quote--lead blockquote {
+  font-size: clamp(19px, 2.1vw, 25px);
+  line-height: 1.4;
+  max-width: 900px;
+}
+
 .quote figcaption {
   margin-top: 18px;
   color: var(--lime);
