@@ -329,6 +329,129 @@ p { margin: 0; }
 
 .card--link:hover { border-color: rgba(232, 255, 43, 0.5); }
 
+/* ── Развилка на главной: себе / бизнесу ── */
+
+.fork {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(20px, 3vw, 40px);
+  align-items: stretch;
+}
+
+.fork-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fork-label {
+  display: block;
+  color: var(--gray);
+  font-weight: 800;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.fork-col:first-child .fork-label { color: var(--lime); }
+
+/* обе карточки в колонке тянутся на одну высоту */
+.fork-col .card--link { flex: 1; }
+
+/* ── Слэш перед заголовком секции ── */
+
+.slash {
+  display: block;
+  color: var(--olive);
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+/* ── Блок узнавания: боли через слэш ── */
+
+.recog-intro {
+  margin-top: 40px;
+  margin-bottom: 12px;
+  color: var(--light);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+}
+
+.recog {
+  color: var(--gray);
+  max-width: 780px;
+  margin-bottom: 32px;
+  border-left: 4px solid var(--olive);
+  padding-left: 20px;
+}
+
+/* ── Подзаголовок «Внутри сезона» ── */
+
+.season-h {
+  margin-top: clamp(36px, 6vh, 56px);
+  margin-bottom: 20px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── FAQ на нативных details ── */
+
+.faq { border-top: 1px solid var(--border); }
+
+.faq details { border-bottom: 1px solid var(--border); }
+
+.faq summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 20px 40px 20px 0;
+  position: relative;
+  font-weight: 800;
+  font-size: 17px;
+  transition: color 0.18s ease;
+}
+
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary:hover { color: var(--lime); }
+
+/* плюс из двух пиксельных полос, при раскрытии вертикаль исчезает */
+.faq summary::before,
+.faq summary::after {
+  content: "";
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  background: var(--lime);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.faq summary::before {
+  width: 16px;
+  height: 2px;
+  margin-top: -1px;
+}
+
+.faq summary::after {
+  width: 2px;
+  height: 16px;
+  margin-top: -8px;
+  margin-right: 7px;
+}
+
+.faq details[open] summary::after { opacity: 0; transform: rotate(90deg); }
+
+.faq details p {
+  color: var(--gray);
+  font-size: 16px;
+  max-width: 720px;
+  padding-bottom: 22px;
+}
+
 /* ── Шапка страницы продукта ── */
 
 .prod-hero {
@@ -341,6 +464,15 @@ p { margin: 0; }
 .prod-hero h1 { margin-bottom: 20px; }
 .prod-hero .lead { margin-bottom: 0; }
 .prod-hero .hero-actions { margin-top: 32px; }
+
+.prod-hero__meta {
+  margin-top: 22px;
+  color: var(--lime);
+  font-weight: 800;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
 
 /* ссылка «назад» — на страницах продуктов и на email */
 
@@ -361,6 +493,10 @@ p { margin: 0; }
   gap: clamp(28px, 4vw, 56px);
   align-items: start;
 }
+
+/* вложенный кейс внутри секции — без липкой колонки */
+.story--tight { grid-template-columns: 200px 1fr; }
+.story--tight .story-side { position: static; }
 
 .story-side {
   position: sticky;
@@ -998,8 +1134,11 @@ p { margin: 0; }
   .view-fig { max-width: 520px; margin-top: 8px; }
   .case { grid-template-columns: 1fr; }
 
+  /* развилка складывается в одну колонку */
+  .fork { grid-template-columns: 1fr; gap: 32px; }
+
   /* кейс-история: цифры уходят наверх в строку */
-  .story { grid-template-columns: 1fr; }
+  .story, .story--tight { grid-template-columns: 1fr; }
   .story-side {
     position: static;
     display: grid;
@@ -1093,6 +1232,9 @@ p { margin: 0; }
 
   /* страницы продуктов */
   .prod-hero .back { margin-bottom: 24px; }
+  .slash { font-size: 22px; }
+  .recog { padding-left: 14px; }
+  .faq summary { font-size: 16px; padding-right: 34px; }
   .story-side { grid-template-columns: 1fr 1fr; }
   .story-lead { font-size: 17px; }
   .story-out { padding: 20px; }
