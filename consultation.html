@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Бесплатная консультация — Уникалисты</title>
+  <meta name="description" content="Бесплатная консультация. 40 минут, онлайн, четыре места в месяц. Определим цель и предложу то, что подходит.">
+  <link rel="icon" type="image/png" href="assets/y-acid.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <nav class="nav" aria-label="Главная навигация">
+    <div class="nav-in">
+      <a class="nav-logo" href="index.html" aria-label="Уникалисты — на главную">
+        <img src="assets/y-acid.png" alt="Уникалисты">
+      </a>
+      <div class="nav-links">
+        <a href="individual.html">Индивидуальная работа</a>
+        <a href="community.html">Сообщество</a>
+        <a href="master-group.html">Мастер-группа</a>
+        <a href="about.html">Обо мне</a>
+        <a class="nav-cta" href="email.html">Оставить почту</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="prod-hero">
+    <div class="wrap">
+      <a class="back" href="index.html">← На главную</a>
+      <span class="chip">Бесплатная консультация</span>
+      <h1>Бесплатная консультация</h1>
+      <p class="lead">40 минут · онлайн · четыре места в месяц</p>
+
+      <!-- Сбор заявок в Google Таблицу — тот же механизм, что на email.html.
+           Настроить приём этих полей можно в том же Apps Script (см. Настройка_сбора_почты.md).
+           Пока форма не подключена к отдельному скрипту — показывает подтверждение, но не сохраняет. -->
+      <form class="app-form" id="consultForm" action="https://script.google.com/macros/s/YOUR_SCRIPT_URL/exec" method="POST">
+        <div class="field">
+          <label for="k-name">Имя</label>
+          <input type="text" id="k-name" name="name" required>
+        </div>
+        <div class="field">
+          <label for="k-tg">Телеграм</label>
+          <input type="text" id="k-tg" name="telegram" required>
+        </div>
+        <div class="field">
+          <label for="k-ctx">Что происходит сейчас</label>
+          <textarea id="k-ctx" name="context" placeholder="опиши в нескольких предложениях" required></textarea>
+        </div>
+        <div>
+          <button class="btn" type="submit" id="consultSubmit">Записаться</button>
+        </div>
+      </form>
+
+      <p class="muted" style="margin-top: 18px;">Или напиши напрямую в Telegram: <a href="https://t.me/rmgrishin" target="_blank" rel="noopener" style="color: var(--lime);">@rmgrishin</a></p>
+
+      <div class="email-success" id="consultSuccess" role="status" aria-live="polite" style="margin-top: 20px;">
+        <p>Записал. Отвечу, чтобы договориться о времени.</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Что происходит на консультации ── -->
+  <section class="section">
+    <div class="wrap">
+      <div class="grid grid--3">
+        <div class="card">
+          <h3>Что происходит</h3>
+          <p>Определяем цель взаимодействия и результат, к которому ты хочешь прийти: что должно быть по итогу, по каким признакам ты поймёшь, что получил желаемое. Я говорю, что увидел, и предлагаю то, что подходит, — индивидуальную работу, среду или ничего из этого.</p>
+        </div>
+        <div class="card">
+          <h3>Что ты уносишь</h3>
+          <p>Сформулированную цель и понимание первого шага — даже если мы дальше не работаем.</p>
+        </div>
+        <div class="card">
+          <h3>Чего здесь не будет</h3>
+          <p>Решения задачи за 40 минут. Продажи «в лоб»: если я не вижу, чем помочь, я так и скажу.</p>
+        </div>
+      </div>
+      <p class="muted" style="margin-top: 24px;">Четыре места в месяц — больше я не беру.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-row">
+        <img src="assets/y-acid.png" alt="">
+        <span>© 2026 Уникалисты · Роман Гришин</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+  <script>
+    const kForm = document.getElementById("consultForm");
+    const kSuccess = document.getElementById("consultSuccess");
+    const kSubmit = document.getElementById("consultSubmit");
+
+    kForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      kSubmit.disabled = true;
+      kSubmit.textContent = "Отправляем…";
+
+      const isConfigured = !kForm.action.includes("YOUR_SCRIPT_URL");
+      let ok = true;
+
+      if (isConfigured) {
+        try {
+          await fetch(kForm.action, { method: "POST", body: new FormData(kForm), mode: "no-cors" });
+        } catch {
+          ok = false;
+        }
+      }
+
+      if (ok) {
+        kForm.style.display = "none";
+        kSuccess.style.display = "block";
+      } else {
+        kSubmit.disabled = false;
+        kSubmit.textContent = "Записаться";
+        alert("Не получилось отправить. Попробуй ещё раз чуть позже — или напиши в Telegram: @rmgrishin");
+      }
+    });
+  </script>
+
+</body>
+</html>
