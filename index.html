@@ -18,7 +18,9 @@
       <a class="nav-logo" href="index.html" aria-label="Уникалисты — на главную">
         <img src="assets/y-acid.png" alt="Уникалисты">
       </a>
-      <div class="nav-links">
+      <a class="nav-cta nav-cta--m" href="email.html">Оставить почту</a>
+      <button class="nav-burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+      <div class="nav-links" id="navLinks">
         <a href="individual.html">Индивидуальная работа</a>
         <a href="community.html">Сообщество</a>
         <a href="master-group.html">Мастер-группа</a>
@@ -33,24 +35,23 @@
     <div class="pixel-stairs" aria-hidden="true"></div>
     <div class="wrap">
       <img class="hero-wordmark" src="assets/wordmark-acid.png" alt="Уникалисты" width="1568" height="240">
-      <p class="tagline">Кратчайший путь — всегда чужой.</p>
+      <p class="tagline">Дело вокруг личности, а не наоборот.</p>
 
-      <h2 class="hero-sub">Боль</h2>
-      <p class="lead">Десять болей, с которыми чаще всего сталкиваются творцы:</p>
+      <p class="lead">Что чаще всего стоит за «я ищу себя»:</p>
       <ul class="list-plain hero-list">
-        <li><span class="marker" aria-hidden="true"></span>Тебе нравится делать одно, а зарабатывать приходится на чём-то другом.</li>
-        <li><span class="marker" aria-hidden="true"></span>Ты чувствуешь себя не на своём месте или что ты заперт в клетке.</li>
-        <li><span class="marker" aria-hidden="true"></span>Не получаешь удовлетворения от того, что делаешь сейчас.</li>
-        <li><span class="marker" aria-hidden="true"></span>Ты многое умеешь, но не знаешь, в чём твои таланты и сильные стороны.</li>
-        <li><span class="marker" aria-hidden="true"></span>Тебе сложно признавать свои достижения или ты считаешь, что их у тебя нет.</li>
-        <li><span class="marker" aria-hidden="true"></span>Тебе страшно начинать своё дело.</li>
-        <li><span class="marker" aria-hidden="true"></span>Тебе тяжело назвать цену или взять деньги за свою работу.</li>
-        <li><span class="marker" aria-hidden="true"></span>Ты много учишься, но часто не применяешь знания в деле.</li>
-        <li><span class="marker" aria-hidden="true"></span>Ты прячешь свои лучшие стороны.</li>
-        <li><span class="marker" aria-hidden="true"></span>Боишься, что тебя осудят знакомые, которых последний раз видел 10 лет назад.</li>
+        <li><span class="marker" aria-hidden="true"></span>Нравится делать одно, а зарабатываешь на другом.</li>
+        <li><span class="marker" aria-hidden="true"></span>Чувствуешь, что ты не на своём месте.</li>
+        <li><span class="marker" aria-hidden="true"></span>Деньги есть, но ты не понимаешь, кто ты и чего ты хочешь.</li>
+        <li><span class="marker" aria-hidden="true"></span>Есть аудитория, но не хочешь быть инфоцыганом.</li>
+        <li><span class="marker" aria-hidden="true"></span>Многое умеешь, но не можешь сказать, что из этого — твоё.</li>
+        <li><span class="marker" aria-hidden="true"></span>Не можешь назвать свои достижения.</li>
+        <li><span class="marker" aria-hidden="true"></span>Уже не первый год хочешь начать своё дело, но страшно уйти в никуда.</li>
+        <li><span class="marker" aria-hidden="true"></span>Тяжело назвать цену или взять деньги за свою работу.</li>
+        <li><span class="marker" aria-hidden="true"></span>Не знаешь, в чём ты хорош(а), и не знаешь, как представляться.</li>
+        <li><span class="marker" aria-hidden="true"></span>Делаешь что-то для себя и никому не показываешь.</li>
+        <li><span class="marker" aria-hidden="true"></span>Боишься, что осудят знакомые, которых ты последний раз видел 10 лет назад.</li>
       </ul>
-      <p class="lead" style="margin-top: 28px;">Узнаёшь себя хотя бы в трёх?</p>
-      <p class="lead" style="margin-top: 12px;">Твои трудности не уникальны. Ты не первый, кто с этим сталкивается. Найти ответы в разы проще рядом с теми, кто идёт тем же путём.</p>
+      <p class="lead" style="margin-top: 28px;">Узнаёшь себя хотя бы в трёх?<br>Твои трудности не уникальны.<br>Свой путь проще найти рядом с теми, кто тоже ищет свой.</p>
     </div>
   </header>
 
@@ -100,25 +101,11 @@
           <img src="assets/roman.jpg" alt="Роман Гришин" width="960" height="1200">
         </div>
         <div class="about-text">
-          <span class="card-num">Уникалист. Предприниматель</span>
           <h3>Роман Гришин</h3>
+          <p class="about-role">Уникалист. Предприниматель</p>
           <p>Бизнес, который я основал, вырос до 300 млн ₽ в год и работает без меня.</p>
           <p>Строю дело вокруг личности и объединяю тех, кто делает то же самое.</p>
           <a class="about-more" href="about.html">Подробнее обо мне →</a>
-          <div class="about-socials">
-            <a href="https://t.me/unicalist" target="_blank" rel="noopener" aria-label="Телеграм-канал «Уникалисты»">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
-              <span>Телеграм</span>
-            </a>
-            <a href="https://www.youtube.com/@unicalist" target="_blank" rel="noopener" aria-label="YouTube-канал «Уникалисты»">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
-              <span>YouTube</span>
-            </a>
-            <a href="https://www.instagram.com/rmgrishin/" target="_blank" rel="noopener" aria-label="Инстаграм Романа">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-              <span>Инстаграм</span>
-            </a>
-          </div>
         </div>
       </div>
     </div>
@@ -129,23 +116,30 @@
     <div class="wrap">
       <div class="section-head">
         <h2>Кому сюда</h2>
-        <p class="lead muted">У тебя есть дело, но ты чувствуешь себя не на своём месте.<br>У тебя есть свой блог, аудитория или занятость, но нет продукта или системы.</p>
-        <p class="lead muted" style="margin-top: 16px;">Ни один из вас никогда не строил дело вокруг себя. Бизнес часто учат строить по готовым лекалам, а дело вокруг личности требует индивидуального подхода.</p>
       </div>
 
       <div class="grid grid--2">
         <div class="card card--a">
           <span class="card-num">Дверь А</span>
           <h3>У тебя уже есть своё дело, но ты чувствуешь себя не на своём месте</h3>
-          <p>Ты делаешь что-то ценное для друзей, знакомых и близких бесплатно. Зарабатываешь чем-то другим и даже не думаешь, что твои навыки могут быть большой ценностью.</p>
+          <p style="color: var(--light);">Ты делаешь что-то ценное для друзей, знакомых и близких бесплатно. Зарабатываешь чем-то другим и даже не думаешь, что твои навыки могут быть большой ценностью.</p>
           <p style="margin-top: 14px;">Умеешь строить процессы, продавать, нанимать, считать юнит-экономику и не только. Не знаешь и не разрешаешь себе знать, что тебе действительно нравится делать как процесс.</p>
         </div>
         <div class="card card--b">
           <span class="card-num">Дверь Б</span>
-          <h3>У тебя есть свой блог, аудитория или занятость, но нет выстроенного дела</h3>
-          <p>Ты не хочешь быть инфоцыганом. И при этом хочешь зарабатывать на том, что тебе нравится делать.</p>
+          <h3>У тебя есть свой блог/аудитория/занятость, но нет выстроенного дела</h3>
+          <p style="color: var(--light);">Ты не хочешь быть инфоцыганом. И при этом хочешь зарабатывать на том, что тебе нравится делать.</p>
           <p style="margin-top: 14px;">Обычно на этом всё и застревает. Непонятно, какой продукт можно сделать для других. Хотя продукт у тебя уже есть: ты делаешь что-то для себя и не показываешь никому, даже собственной аудитории.</p>
         </div>
+      </div>
+
+      <div style="margin-top: 32px;">
+        <svg class="scheme scheme--wide" viewBox="0 0 720 160" shape-rendering="crispEdges" aria-hidden="true" focusable="false"><rect x="0" y="0" width="16" height="16" fill="#8e8e8e" fill-opacity="0.9"/><rect x="0" y="24" width="16" height="16" fill="#8e8e8e" fill-opacity="0.9"/><rect x="0" y="48" width="16" height="16" fill="#8e8e8e" fill-opacity="0.9"/><rect x="24" y="0" width="16" height="16" fill="#8e8e8e" fill-opacity="0.9"/><rect x="24" y="24" width="16" height="16" fill="#8e8e8e" fill-opacity="0.9"/><rect x="24" y="48" width="16" height="16" fill="#8e8e8e" fill-opacity="0.9"/><rect x="48" y="0" width="16" height="16" fill="#8e8e8e" fill-opacity="0.9"/><rect x="48" y="24" width="16" height="16" fill="#8e8e8e" fill-opacity="0.9"/><rect x="48" y="48" width="16" height="16" fill="#8e8e8e" fill-opacity="0.9"/><rect x="72" y="0" width="16" height="16" fill="#8e8e8e" fill-opacity="0.9"/><rect x="72" y="24" width="16" height="16" fill="#8e8e8e" fill-opacity="0.9"/><rect x="72" y="48" width="16" height="16" fill="#8e8e8e" fill-opacity="0.9"/><rect x="96" y="0" width="16" height="16" fill="#8e8e8e" fill-opacity="0.9"/><rect x="96" y="24" width="16" height="16" fill="#8e8e8e" fill-opacity="0.9"/><rect x="96" y="48" width="16" height="16" fill="#8e8e8e" fill-opacity="0.9"/><rect x="0" y="120" width="16" height="16" fill="#8e8e8e" fill-opacity="0.45"/><rect x="48" y="144" width="16" height="16" fill="#8e8e8e" fill-opacity="0.45"/><rect x="24" y="96" width="16" height="16" fill="#8e8e8e" fill-opacity="0.45"/><rect x="72" y="120" width="16" height="16" fill="#8e8e8e" fill-opacity="0.45"/><rect x="96" y="144" width="16" height="16" fill="#8e8e8e" fill-opacity="0.45"/><rect x="560" y="24" width="16" height="16" fill="#e8ff2b" fill-opacity="0.9"/><rect x="584" y="32" width="16" height="16" fill="#e8ff2b" fill-opacity="0.9"/><rect x="608" y="40" width="16" height="16" fill="#e8ff2b" fill-opacity="0.9"/><rect x="632" y="48" width="16" height="16" fill="#e8ff2b" fill-opacity="0.9"/><rect x="656" y="56" width="16" height="16" fill="#e8ff2b" fill-opacity="0.9"/><rect x="560" y="120" width="16" height="16" fill="#e8ff2b" fill-opacity="0.45"/><rect x="608" y="144" width="16" height="16" fill="#e8ff2b" fill-opacity="0.45"/><rect x="632" y="96" width="16" height="16" fill="#e8ff2b" fill-opacity="0.45"/><rect x="680" y="120" width="16" height="16" fill="#e8ff2b" fill-opacity="0.45"/><rect x="584" y="72" width="16" height="16" fill="#e8ff2b" fill-opacity="0.45"/><rect x="200" y="72" width="16" height="16" fill="#7a8239" fill-opacity="0.75"/><rect x="232" y="80" width="16" height="16" fill="#7a8239" fill-opacity="0.75"/><rect x="264" y="72" width="16" height="16" fill="#7a8239" fill-opacity="0.75"/><rect x="296" y="80" width="16" height="16" fill="#7a8239" fill-opacity="0.75"/><rect x="328" y="72" width="16" height="16" fill="#7a8239" fill-opacity="0.75"/><rect x="360" y="80" width="16" height="16" fill="#7a8239" fill-opacity="0.75"/><rect x="392" y="72" width="16" height="16" fill="#7a8239" fill-opacity="0.75"/><rect x="424" y="80" width="16" height="16" fill="#7a8239" fill-opacity="0.75"/><rect x="456" y="72" width="16" height="16" fill="#7a8239" fill-opacity="0.75"/><rect x="496" y="64" width="32" height="32" fill="#e8ff2b"/></svg>
+      </div>
+
+      <div class="pull" style="margin-top: 32px;">
+        <p>У тебя есть дело, но ты чувствуешь себя не на своём месте.<br>У тебя есть свой блог/аудитория/занятость, но нет продукта или системы.</p>
+        <p>Ни один из вас никогда не строил дело вокруг себя.<br>Бизнес часто учат строить по готовым лекалам, а дело вокруг личности требует индивидуального подхода.</p>
       </div>
     </div>
   </section>
@@ -155,27 +149,26 @@
     <div class="wrap">
       <div class="section-head">
         <h2>Как со мной можно поработать</h2>
-        <p class="lead muted">Вместе с другими — когда нужны те, кто идёт туда же. Один на один — когда нужно разобраться самому.<br>Это не дешёвая и дорогая версия одного и того же.</p>
+        <p class="lead"><a class="lead-link" href="community.html"><strong>Вместе с другими</strong></a> — когда нужны те, кто идёт туда же.<br><a class="lead-link" href="individual.html"><strong>Один на один</strong></a> — когда нужно разобраться самому.<br>Это не дешёвая и дорогая версия одного и того же.</p>
       </div>
 
       <div class="grid grid--3">
         <a class="card card--link" href="individual.html">
-          <span class="card-num">Один на один</span>
-          <h3>Индивидуальная работа</h3>
-          <p>3–4 месяца работы, восемь встреч. Вход через консультацию.</p>
-          <span class="card-go">Подробнее →</span>
+          <h3>Один на один</h3>
+          <p>3–4 месяца работы, восемь встреч.</p>
+          <span class="card-status">Вход через консультацию</span>
+          <span class="card-go">Тут больше →</span>
         </a>
         <a class="card card--link" href="community.html">
-          <span class="card-num">Набор закрыт</span>
           <h3>Сообщество «Уникалисты»</h3>
-          <p>Тусовка, материалы, разборы, мастер-классы, ответы на вопросы, встречи с участниками. Сезонами.</p>
-          <span class="card-go">Оставить заявку →</span>
+          <p>Тусовка, материалы, разборы, мастер-классы, ответы на вопросы, встречи с участниками.<br>Сезонами.</p>
+          <span class="card-status">Набор закрыт</span>
+          <span class="card-go">Тут больше →</span>
         </a>
         <a class="card card--link" href="master-group.html">
-          <span class="card-num">6–8 человек</span>
           <h3>Мастер-группа</h3>
-          <p>1 сезон, проживаем опыт вместе. Для тех, кому есть что положить на стол. Не подходит, если ты ещё не решил, чем тебе заняться.</p>
-          <span class="card-go">Оставить заявку →</span>
+          <p>6–8 человек, 1 сезон, проживаем опыт вместе. Для тех, кому есть что положить на стол. Не подходит, если ты ещё не решил, чем тебе заняться.</p>
+          <span class="card-go">Тут больше →</span>
         </a>
       </div>
       <p class="muted" style="margin-top: 24px; font-size: 14px;">Цены и условия — на страницах форматов.</p>
@@ -186,7 +179,7 @@
   <section class="final">
     <div class="wrap">
       <h2>Всё начинается с разговора</h2>
-      <p>Бесплатная консультация, 40 минут, онлайн. Определим, о чём ты мечтаешь и что нужно делать, чтобы к этому прийти. Я скажу, что увидел, и предложу то, что подходит, — индивидуальную работу, среду или ничего из этого.</p>
+      <p>Бесплатная консультация, 40 минут, онлайн. Определим, о чём ты мечтаешь и что нужно делать, чтобы к этому прийти.<br>Я скажу, что увидел, и предложу то, что подходит, — индивидуальную работу, среду или ничего из этого.</p>
       <p style="font-weight: 800; margin-top: -16px;">Четыре места в месяц</p>
       <a class="btn" href="consultation.html">Записаться на консультацию</a>
     </div>
@@ -194,12 +187,11 @@
 
   <footer class="footer">
     <div class="wrap">
-      <p class="disclaimer">Уникалисты — это место, где находят единомышленников. Не заменяет терапию. Если сейчас совсем тяжело, обратись к специалисту. Это не слабость.</p>
-      <p class="footer-links"><a href="https://t.me/unicalist" target="_blank" rel="noopener">Канал «Уникалисты»</a> · <a href="https://www.youtube.com/@unicalist" target="_blank" rel="noopener">YouTube</a> · <a href="https://www.instagram.com/rmgrishin/" target="_blank" rel="noopener">Инстаграм</a></p>
-      <div class="footer-row">
-        <img src="assets/y-acid.png" alt="">
-        <span>© 2026 Уникалисты · Роман Гришин</span>
-      </div>
+      <p class="footer-brand">Уникалисты · Роман Гришин</p>
+      <p class="footer-media"><a href="https://t.me/unicalist" target="_blank" rel="noopener">Канал «Уникалисты»</a> · <a href="https://www.youtube.com/@unicalist" target="_blank" rel="noopener">YouTube</a> · <a href="https://www.instagram.com/rmgrishin/" target="_blank" rel="noopener">Инстаграм</a></p>
+      <p class="footer-nav"><a href="individual.html">Индивидуальная работа</a> · <a href="community.html">Сообщество</a> · <a href="master-group.html">Мастер-группа</a> · <a href="about.html">Обо мне</a> · <a href="email.html">Письмо</a></p>
+      <p class="disclaimer">Уникалисты — это место, где находят единомышленников. Не заменяет терапию.<br>Если сейчас совсем тяжело, обратись к специалисту. Это не слабость.</p>
+      <p>© 2026</p>
     </div>
   </footer>
 

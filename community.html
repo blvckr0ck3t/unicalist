@@ -18,7 +18,9 @@
       <a class="nav-logo" href="index.html" aria-label="Уникалисты — на главную">
         <img src="assets/y-acid.png" alt="Уникалисты">
       </a>
-      <div class="nav-links">
+      <a class="nav-cta nav-cta--m" href="email.html">Оставить почту</a>
+      <button class="nav-burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+      <div class="nav-links" id="navLinks">
         <a href="individual.html">Индивидуальная работа</a>
         <a href="community.html" aria-current="page">Сообщество</a>
         <a href="master-group.html">Мастер-группа</a>
@@ -34,7 +36,7 @@
       <span class="chip">Сезонами</span>
       <h1>Место, где становятся уникалистами</h1>
       <p class="lead">Среда единомышленников — тех, кому по пути создать дело вокруг личности, а не наоборот. Сезонами.</p>
-      <p class="muted" style="margin-top: 14px;">Набор закрыт. Следующий — в октябре</p>
+      <p style="margin-top: 22px; color: var(--lime); font-weight: 700; font-size: 19px;">Набор закрыт. Следующий — в октябре</p>
       <div class="hero-actions">
         <a class="btn" href="#заявка">Оставить заявку</a>
       </div>
@@ -47,37 +49,24 @@
       <div class="section-head">
         <h2>Что внутри</h2>
       </div>
-      <div class="grid grid--3">
-        <div class="card">
+      <div class="rows">
+        <div class="row">
           <h3>Разборы</h3>
           <p>Я разбираю случай участника при всех. Разбирается один, узнают себя все.</p>
         </div>
-        <div class="card">
+        <div class="row">
           <h3>Коворк</h3>
           <p>Регулярно собираемся, чтобы поработать вместе.</p>
         </div>
-        <div class="card">
+        <div class="row">
           <h3>Интервью и встречи с участниками</h3>
           <p>Тот, кто хочет рассказать о себе, получает площадку.</p>
         </div>
+        <div class="row">
+          <h3>И главное: сообщество можно использовать под свои задачи</h3>
+          <p>Найти свои сильные стороны, дружественную аудиторию, найти партнёра, получить обратную связь на то, что делаешь. Это не побочный эффект — это то, за чем сюда идут.</p>
+        </div>
       </div>
-      <p class="lead" style="margin-top: 32px; max-width: 720px;">И главное: сообщество можно использовать под свои задачи. Найти свои сильные стороны, дружественную аудиторию, найти партнёра, получить обратную связь на то, что делаешь. Это не побочный эффект — это то, за чем сюда идут.</p>
-    </div>
-  </section>
-
-  <!-- ── Мастер-классы ── -->
-  <section class="section">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Мастер-классы</h2>
-        <p class="lead muted">Рабочие встречи с гостями и разборы практики. Регулярно, для участников сообщества.</p>
-      </div>
-      <a class="card card--link" href="ai-workshop.html">
-        <span class="card-num">Пример мастер-класса</span>
-        <h3>AI Hands-On Workshop</h3>
-        <p>Рабочая встреча по пятницам в Zoom. Для тех, кому некогда разбираться самому и непонятно, с чего начать применять ИИ в своих задачах.</p>
-        <span class="card-go">Подробнее →</span>
-      </a>
     </div>
   </section>
 
@@ -86,22 +75,24 @@
     <div class="wrap">
       <div class="section-head">
         <h2>Почему это работает</h2>
-        <p class="lead muted">Четыре вещи, которые даёт соседство и которые в одиночку не берутся ниоткуда:</p>
+        <p class="muted">Четыре вещи, которые даёт соседство и которые в одиночку не берутся ниоткуда:</p>
       </div>
-      <div class="grid grid--4">
-        <div class="card">
+      <div class="rows">
+        <div class="row">
           <h3>Норма</h3>
-          <p>Пока ты один строишь дело вокруг себя, для близких это может выглядеть как блажь. Когда рядом ещё двадцать человек делают то же самое, это становится нормой. Ты перестаёшь тратить силы на защиту самой идеи перед самим собой.</p>
+          <p>Пока ты один строишь дело вокруг себя, для близких это может выглядеть как блажь.</p>
+          <p>Когда рядом ещё двадцать человек делают то же самое, это становится нормой.</p>
+          <p>Ты перестаёшь тратить силы на защиту самой идеи перед самим собой.</p>
         </div>
-        <div class="card">
+        <div class="row">
           <h3>Скорость</h3>
           <p>Кто-то на полгода впереди ровно по твоему вопросу, и ему нечего скрывать. Вы не конкуренты, дело вокруг себя не тиражируется.</p>
         </div>
-        <div class="card">
+        <div class="row">
           <h3>Свидетели</h3>
           <p>Сказанное вслух при людях делается чаще, чем задуманное про себя.</p>
         </div>
-        <div class="card">
+        <div class="row">
           <h3>Друг друга</h3>
           <p>Первые клиенты, партнёры и заказы находятся внутри. Потому что состав намеренно разный.</p>
         </div>
@@ -114,20 +105,31 @@
     <div class="wrap">
       <div class="section-head">
         <h2>Правило состава</h2>
-        <p class="lead muted">Примерно поровну из двух дверей. Это держится руками при наборе.</p>
       </div>
-      <div class="grid grid--2">
-        <div class="card">
+      <div class="pull" style="margin-bottom: 18px;">
+        <p>Примерно поровну из двух дверей. Это держится руками при наборе.</p>
+      </div>
+      <div class="rows">
+        <div class="row">
           <h3>Предприниматель избавляет создателя от иллюзий про бизнес</h3>
           <p>У человека, который никогда не запускал, в голове сложная и страшная конструкция: делегирование, процессы, «надо сначала научиться». Предприниматель этих заблуждений давно лишился и снимает их за один разговор.</p>
         </div>
-        <div class="card">
+        <div class="row">
           <h3>Создатель даёт предпринимателю то, чего у него нет</h3>
           <p>Умение делать то, что предприниматель не умеет, — и живой пример дела, собранного вокруг человека, а не вокруг ниши.</p>
         </div>
       </div>
-      <p class="muted" style="margin-top: 28px; max-width: 720px;">Сезон — это общий фокус на 3 месяца. Подписка — срок обязательства. Можно взять квартал, полгода или год; сезоны сменяются внутри.</p>
-      <p class="muted" style="max-width: 720px; margin-top: 8px;">Живёт всё это в закрытой телеграм-группе.</p>
+    </div>
+  </section>
+
+  <!-- ── Как это устроено во времени ── -->
+  <section class="section">
+    <div class="wrap">
+      <p style="font-size: 19px; max-width: 900px;">Сезон — это общий фокус на 3 месяца. Подписка — срок обязательства. Можно взять квартал, полгода или год; сезоны сменяются внутри.</p>
+      <p class="muted" style="font-size: 16px; margin-top: 18px;">Живёт всё это в закрытой телеграм-группе.</p>
+      <div style="margin-top: 18px;">
+        <svg class="scheme scheme--wide" viewBox="0 0 720 104" shape-rendering="crispEdges" aria-hidden="true" focusable="false"><rect x="0" y="24" width="16" height="16" fill="#8e8e8e"/><rect x="0" y="48" width="16" height="16" fill="#8e8e8e"/><rect x="0" y="72" width="16" height="16" fill="#8e8e8e"/><rect x="24" y="24" width="16" height="16" fill="#8e8e8e"/><rect x="24" y="48" width="16" height="16" fill="#8e8e8e"/><rect x="24" y="72" width="16" height="16" fill="#8e8e8e"/><rect x="48" y="24" width="16" height="16" fill="#8e8e8e"/><rect x="48" y="48" width="16" height="16" fill="#8e8e8e"/><rect x="48" y="72" width="16" height="16" fill="#8e8e8e"/><rect x="96" y="24" width="16" height="16" fill="#8e8e8e"/><rect x="96" y="48" width="16" height="16" fill="#8e8e8e"/><rect x="96" y="72" width="16" height="16" fill="#8e8e8e"/><rect x="120" y="24" width="16" height="16" fill="#8e8e8e"/><rect x="120" y="48" width="16" height="16" fill="#8e8e8e"/><rect x="120" y="72" width="16" height="16" fill="#8e8e8e"/><rect x="144" y="24" width="16" height="16" fill="#8e8e8e"/><rect x="144" y="48" width="16" height="16" fill="#8e8e8e"/><rect x="144" y="72" width="16" height="16" fill="#8e8e8e"/><rect x="192" y="24" width="16" height="16" fill="#8e8e8e"/><rect x="192" y="48" width="16" height="16" fill="#8e8e8e"/><rect x="192" y="72" width="16" height="16" fill="#8e8e8e"/><rect x="216" y="24" width="16" height="16" fill="#8e8e8e"/><rect x="216" y="48" width="16" height="16" fill="#8e8e8e"/><rect x="216" y="72" width="16" height="16" fill="#8e8e8e"/><rect x="240" y="24" width="16" height="16" fill="#8e8e8e"/><rect x="240" y="48" width="16" height="16" fill="#8e8e8e"/><rect x="240" y="72" width="16" height="16" fill="#8e8e8e"/><rect x="288" y="40" width="16" height="16" fill="#8e8e8e"/><rect x="312" y="48" width="16" height="16" fill="#8e8e8e"/><rect x="336" y="56" width="16" height="16" fill="#8e8e8e"/><rect x="360" y="64" width="16" height="16" fill="#8e8e8e"/><rect x="384" y="72" width="16" height="16" fill="#8e8e8e"/><rect x="432" y="64" width="32" height="32" fill="#e8ff2b"/></svg>
+      </div>
     </div>
   </section>
 
@@ -151,25 +153,15 @@
       <div class="section-head">
         <h2>Условия</h2>
       </div>
-      <div class="grid grid--3">
-        <div class="card">
-          <span class="card-num">Квартал</span>
-          <h3>21 000 ₽</h3>
-          <p>7 000 ₽ в месяц</p>
-        </div>
-        <div class="card">
-          <span class="card-num">Полгода</span>
-          <h3>38 000 ₽</h3>
-          <p>~6 300 ₽ в месяц</p>
-        </div>
-        <div class="card">
-          <span class="card-num">Год</span>
-          <h3>68 000 ₽</h3>
-          <p>~5 700 ₽ в месяц</p>
-        </div>
+      <dl class="price-rows">
+        <div class="price-row"><dt>Квартал</dt><dd class="price">21 000 ₽</dd><dd class="per">7 000 ₽ в месяц</dd></div>
+        <div class="price-row"><dt>Полгода</dt><dd class="price">38 000 ₽</dd><dd class="per">~6 300 ₽ в месяц</dd></div>
+        <div class="price-row"><dt>Год</dt><dd class="price">68 000 ₽</dd><dd class="per">~5 700 ₽ в месяц</dd></div>
+      </dl>
+      <div class="pull" style="margin-top: 18px; font-size: 19px;">
+        <p>Попробовать — дороже. Взять длинные обязательства — дешевле.</p>
       </div>
-      <p class="muted" style="margin-top: 24px;">Попробовать — дороже. Взять длинные обязательства — дешевле.</p>
-      <p class="muted" style="margin-top: 6px;">Пробный месяц — 8 000 ₽, по приглашению. Отдельно не продаётся.</p>
+      <p class="muted" style="margin-top: 18px; font-size: 14px;">Пробный месяц — 8 000 ₽, по приглашению. Отдельно не продаётся.</p>
     </div>
   </section>
 
@@ -178,7 +170,7 @@
     <div class="wrap">
       <div class="section-head">
         <h2>Расскажи о себе</h2>
-        <p class="lead muted">Пять вопросов. Ответь на них и пришли мне в Telegram — заполненная заявка уже начало работы.</p>
+        <p class="lead muted">Пять вопросов. Заполненная заявка — уже начало работы.</p>
       </div>
 
       <ul class="app-questions">
@@ -190,7 +182,7 @@
       </ul>
 
       <div class="hero-actions" style="margin-top: 28px;">
-        <a class="btn" href="https://t.me/rmgrishin" target="_blank" rel="noopener">Отправить заявку в Telegram</a>
+        <a class="btn" href="https://t.me/rmgrishin" target="_blank" rel="noopener">Отправить заявку</a>
       </div>
       <p class="muted" style="margin-top: 18px;">Отвечу в течение недели. Следующий набор — в октябре.</p>
       <p class="muted" style="margin-top: 8px; max-width: 640px;">Что получает оставивший заявку: первоочередное право на следующий набор и письмо раз в две недели — то, что я вижу по ходу собственного перехода.</p>
@@ -199,12 +191,10 @@
 
   <footer class="footer">
     <div class="wrap">
-      <p class="disclaimer">Уникалисты — это место, где находят единомышленников. Не заменяет терапию. Если сейчас совсем тяжело, обратись к специалисту. Это не слабость.</p>
-      <p class="footer-links"><a href="https://t.me/unicalist" target="_blank" rel="noopener">Канал «Уникалисты»</a> · <a href="https://www.youtube.com/@unicalist" target="_blank" rel="noopener">YouTube</a> · <a href="https://www.instagram.com/rmgrishin/" target="_blank" rel="noopener">Инстаграм</a></p>
-      <div class="footer-row">
-        <img src="assets/y-acid.png" alt="">
-        <span>© 2026 Уникалисты · Роман Гришин</span>
-      </div>
+      <p class="footer-brand">Уникалисты · Роман Гришин</p>
+      <p class="footer-media"><a href="https://t.me/unicalist" target="_blank" rel="noopener">Канал «Уникалисты»</a> · <a href="https://www.youtube.com/@unicalist" target="_blank" rel="noopener">YouTube</a> · <a href="https://www.instagram.com/rmgrishin/" target="_blank" rel="noopener">Инстаграм</a></p>
+      <p class="footer-nav"><a href="individual.html">Индивидуальная работа</a> · <a href="community.html">Сообщество</a> · <a href="master-group.html">Мастер-группа</a> · <a href="about.html">Обо мне</a> · <a href="email.html">Письмо</a></p>
+      <p>© 2026</p>
     </div>
   </footer>
 

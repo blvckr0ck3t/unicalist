@@ -18,6 +18,15 @@
       <a class="nav-logo" href="index.html" aria-label="Уникалисты — на главную">
         <img src="assets/y-acid.png" alt="Уникалисты">
       </a>
+      <a class="nav-cta nav-cta--m" href="email.html">Оставить почту</a>
+      <button class="nav-burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+      <div class="nav-links" id="navLinks">
+        <a href="individual.html">Индивидуальная работа</a>
+        <a href="community.html">Сообщество</a>
+        <a href="master-group.html">Мастер-группа</a>
+        <a href="about.html">Обо мне</a>
+        <a class="nav-cta" href="email.html">Оставить почту</a>
+      </div>
     </div>
   </nav>
 
@@ -27,7 +36,7 @@
         <a class="back" href="index.html">← На главную</a>
         <span class="chip">Почта</span>
         <h1 style="margin-top: 20px;">Письмо раз в две недели</h1>
-        <p class="lead muted">То, что я вижу по ходу собственного перехода. Что пробую, что работает, что нет и на чём спотыкаюсь.</p>
+        <p class="lead muted">То, что я вижу по ходу собственного перехода.<br>Что пробую, что работает, что нет и на чём спотыкаюсь.</p>
 
         <!-- Сбор почт в Google Таблицу. Как настроить — см. Настройка_сбора_почты.md
              в корне проекта. После настройки замени YOUR_SCRIPT_URL на URL веб-приложения
@@ -51,7 +60,7 @@
           </div>
           <div style="margin-bottom: 20px;">
             <h3 style="margin-bottom: 6px;">На что я потратил больше десяти миллионов и что из этого сработало</h3>
-            <p class="muted">Обучение, стратсессии, продукты для бизнеса. Рынок с позиции покупателя: что работает, что нет и чем честный продукт отличается от красивой обёртки.</p>
+            <p class="muted">Обучение, стратсессии, продукты для бизнеса.<br>Рынок с позиции покупателя: что работает, что нет и чем честный продукт отличается от красивой обёртки.</p>
           </div>
           <div>
             <h3 style="margin-bottom: 6px;">Мой собственный переход</h3>
@@ -61,13 +70,18 @@
 
         <div style="margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--border);">
           <h2 style="font-size: 22px; margin-bottom: 12px;">Чего не будет</h2>
-          <p class="muted" style="margin-bottom: 8px;">Цепочек и прогревов.</p>
-          <p class="muted" style="margin-bottom: 8px;">Писем ради писем — пишу, когда есть что сказать.</p>
-          <p class="muted">Продажи в каждом письме: если что-то открывается, скажу один раз и вернусь к делу.</p>
+          <p style="margin-bottom: 8px;">Цепочек и прогревов.</p>
+          <p style="margin-bottom: 8px;">Писем ради писем — пишу, когда есть что сказать.</p>
+          <p>Продажи в каждом письме: если что-то открывается, скажу один раз и вернусь к делу.</p>
         </div>
 
         <div style="margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--border);">
-          <p class="muted" style="margin-bottom: 20px;">Если ты в переходе, но пока не готов ни разговаривать, ни подавать заявку — это самый низкий порог, который у меня есть. Читай столько, сколько нужно.</p>
+          <div class="pull">
+            <p>Если ты в переходе, но пока не готов ни разговаривать, ни подавать заявку — это самый низкий порог, который у меня есть. Читай столько, сколько нужно.</p>
+          </div>
+        </div>
+
+        <div style="margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--border);">
           <p style="margin-bottom: 10px;"><a href="consultation.html" style="color: var(--lime);">Разговор — бесплатная консультация, 40 минут, четыре места в месяц →</a></p>
           <p><a href="community.html#заявка" style="color: var(--lime);">Среда — заявка в сообщество, пять вопросов →</a></p>
         </div>
@@ -77,11 +91,10 @@
 
   <footer class="footer">
     <div class="wrap">
-      <p class="footer-links"><a href="https://t.me/unicalist" target="_blank" rel="noopener">Канал «Уникалисты»</a> · <a href="https://www.youtube.com/@unicalist" target="_blank" rel="noopener">YouTube</a> · <a href="https://www.instagram.com/rmgrishin/" target="_blank" rel="noopener">Инстаграм</a></p>
-      <div class="footer-row">
-        <img src="assets/y-acid.png" alt="">
-        <span>© 2026 Уникалисты · Роман Гришин</span>
-      </div>
+      <p class="footer-brand">Уникалисты · Роман Гришин</p>
+      <p class="footer-media"><a href="https://t.me/unicalist" target="_blank" rel="noopener">Канал «Уникалисты»</a> · <a href="https://www.youtube.com/@unicalist" target="_blank" rel="noopener">YouTube</a> · <a href="https://www.instagram.com/rmgrishin/" target="_blank" rel="noopener">Инстаграм</a></p>
+      <p class="footer-nav"><a href="individual.html">Индивидуальная работа</a> · <a href="community.html">Сообщество</a> · <a href="master-group.html">Мастер-группа</a> · <a href="about.html">Обо мне</a> · <a href="email.html">Письмо</a></p>
+      <p>© 2026</p>
     </div>
   </footer>
 
@@ -123,6 +136,8 @@
       }
     });
   </script>
+
+  <script src="script.js" defer></script>
 
 </body>
 </html>

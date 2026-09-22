@@ -18,7 +18,9 @@
       <a class="nav-logo" href="index.html" aria-label="Уникалисты — на главную">
         <img src="assets/y-acid.png" alt="Уникалисты">
       </a>
-      <div class="nav-links">
+      <a class="nav-cta nav-cta--m" href="email.html">Оставить почту</a>
+      <button class="nav-burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+      <div class="nav-links" id="navLinks">
         <a href="individual.html">Индивидуальная работа</a>
         <a href="community.html">Сообщество</a>
         <a href="master-group.html">Мастер-группа</a>
@@ -33,9 +35,11 @@
       <a class="back" href="community.html">← К сообществу</a>
       <span class="chip">Мастер-класс</span>
       <h1>AI Hands-On Workshop</h1>
-      <p class="lead">Рабочая встреча по пятницам в Zoom. Для тех, кому некогда разбираться самому и непонятно, с чего начать применять ИИ в своих задачах.</p>
-      <p class="muted" style="max-width: 640px; margin-top: 16px;">Это не лекция с программой на всех. Каждый работает над своей задачей — Рома помогает найти, к кому обратиться с вопросом.</p>
-      <p style="margin-top: 20px; font-weight: 700;">Пятница, 10:00–11:00 по Москве, Zoom. Регистрация — до 18:00 четверга, 24 сентября.</p>
+      <p class="lead">Рабочая встреча по пятницам в Zoom.<br>Для тех, кому некогда разбираться самому и непонятно, с чего начать применять ИИ в своих задачах.</p>
+      <div class="pull pull--lg" style="margin-top: 22px;">
+        <p>Это не лекция с программой на всех.<br>Каждый работает над своей задачей — Рома помогает найти, к кому обратиться с вопросом.</p>
+      </div>
+      <p class="muted" style="margin-top: 22px; font-size: 16px;">Пятница, 10:00–11:00 по Москве, Zoom. Регистрация — до 18:00 четверга, 24 сентября.</p>
       <div class="hero-actions">
         <a class="btn" href="https://t.me/rmgrishin" target="_blank" rel="noopener">Зарегистрироваться</a>
       </div>
@@ -85,14 +89,16 @@
         </div>
         <div class="terms-row">
           <dt>Дедлайн</dt>
-          <dd>18:00, четверг, 24 сентября</dd>
+          <dd class="price">18:00, четверг, 24 сентября</dd>
         </div>
         <div class="terms-row">
           <dt>Оплата</dt>
           <dd>Тем, кто не из команды SIBEARIAN, пришлю ссылку вместе с приглашением</dd>
         </div>
       </dl>
-      <p class="muted" style="margin-top: 20px;">Для команды SIBEARIAN участие в воркшопе бесплатное.</p>
+      <div class="pull" style="margin-top: 20px; font-size: 19px;">
+        <p>Для команды SIBEARIAN участие в воркшопе бесплатное.</p>
+      </div>
     </div>
   </section>
 
@@ -102,38 +108,36 @@
       <div class="section-head">
         <h2>Цена</h2>
       </div>
-      <div class="grid grid--2">
-        <div class="card">
-          <span class="card-num">Остальные</span>
-          <h3>2000 ₽</h3>
-          <p>За разовую встречу, или 5000 ₽ за 4 встречи</p>
+      <dl class="terms">
+        <div class="terms-row">
+          <dt>Остальные</dt>
+          <dd class="price">2000 ₽ за разовую встречу или 5000 ₽ за 4 встречи</dd>
         </div>
-        <div class="card">
-          <span class="card-num">Формат</span>
-          <h3>Раз в неделю</h3>
-          <p>По пятницам, Zoom, 1 час</p>
+        <div class="terms-row">
+          <dt>Формат</dt>
+          <dd>Раз в неделю по пятницам, Zoom, 1 час</dd>
         </div>
+      </dl>
+      <div class="pull" style="margin-top: 20px; font-size: 19px;">
+        <p>Рома ведёт воркшоп в течение месяца — 4 встречи по пятницам.</p>
       </div>
-      <p class="muted" style="margin-top: 24px;">Рома ведёт воркшоп в течение месяца — 4 встречи по пятницам.</p>
     </div>
   </section>
 
-  <!-- ── Финальный CTA ── -->
-  <section class="final">
+  <!-- ── Действие ── -->
+  <section class="section action">
     <div class="wrap">
-      <h2>Зарегистрироваться</h2>
-      <p>Регистрация — до 18:00 четверга, 24 сентября. Напиши в Телеграм — пришлю приглашение и, если нужно, ссылку на оплату.</p>
-      <a class="btn" href="https://t.me/rmgrishin" target="_blank" rel="noopener">Написать в Telegram</a>
+      <a class="btn" href="https://t.me/rmgrishin" target="_blank" rel="noopener">Зарегистрироваться</a>
+      <p class="muted" style="font-size: 16px; max-width: 760px;">Регистрация — до 18:00 четверга, 24 сентября.<br>Напиши в Телеграм — пришлю приглашение и, если нужно, ссылку на оплату.</p>
     </div>
   </section>
 
   <footer class="footer">
     <div class="wrap">
-      <p class="footer-links"><a href="https://t.me/unicalist" target="_blank" rel="noopener">Канал «Уникалисты»</a> · <a href="https://www.youtube.com/@unicalist" target="_blank" rel="noopener">YouTube</a> · <a href="https://www.instagram.com/rmgrishin/" target="_blank" rel="noopener">Инстаграм</a></p>
-      <div class="footer-row">
-        <img src="assets/y-acid.png" alt="">
-        <span>© 2026 Уникалисты · Роман Гришин</span>
-      </div>
+      <p class="footer-brand">Уникалисты · Роман Гришин</p>
+      <p class="footer-media"><a href="https://t.me/unicalist" target="_blank" rel="noopener">Канал «Уникалисты»</a> · <a href="https://www.youtube.com/@unicalist" target="_blank" rel="noopener">YouTube</a> · <a href="https://www.instagram.com/rmgrishin/" target="_blank" rel="noopener">Инстаграм</a></p>
+      <p class="footer-nav"><a href="individual.html">Индивидуальная работа</a> · <a href="community.html">Сообщество</a> · <a href="master-group.html">Мастер-группа</a> · <a href="about.html">Обо мне</a> · <a href="email.html">Письмо</a></p>
+      <p>© 2026</p>
     </div>
   </footer>
 
