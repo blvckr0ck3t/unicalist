@@ -1482,3 +1482,26 @@ blockquote.quote { margin: 0; }
 .lead-link:hover { color: var(--lime); }
 .row-link { color: var(--lime); font-weight: 700; text-decoration: none; }
 .row-link:hover { text-decoration: underline; }
+
+/* Главная: плотный список болей — без разделителей, в две колонки на десктопе */
+.hero .lead:has(+ .hero-list) { margin-bottom: 0; }
+.hero-list {
+  max-width: 1080px;
+  margin-top: 16px;
+  columns: 2;
+  column-gap: 40px;
+}
+.hero-list li { break-inside: avoid; }
+.hero-list li {
+  padding: 5px 0;
+  border-bottom: none;
+  gap: 12px;
+  font-size: 16px;
+  line-height: 1.45;
+}
+.hero-list .marker { margin-top: 8px; }
+
+@media (max-width: 640px) {
+  .hero-list { columns: 1; }
+  .hero-list li { padding: 4px 0; font-size: 15px; }
+}
