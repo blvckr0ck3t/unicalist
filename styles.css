@@ -1236,6 +1236,43 @@ p { margin: 0; }
 
 .app-questions li p { color: var(--light); margin: 0; }
 
+blockquote.quote { margin: 0; }
+.quote cite { display: block; }
+
+/* ── Главная: слоган, боли, этапы перехода ── */
+
+.tagline {
+  color: var(--lime);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  margin-bottom: 40px;
+}
+
+.hero-sub { margin-bottom: 20px; }
+
+.hero-list { max-width: 760px; margin-top: 12px; }
+
+.stages {
+  margin-top: 16px;
+  padding: 18px 22px;
+  border: 1px solid var(--olive);
+  font-weight: 800;
+  font-size: clamp(15px, 1.8vw, 18px);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  max-width: 760px;
+}
+
+.stages span { color: var(--lime); padding: 0 6px; }
+
+/* ── Ссылки в подвале ── */
+
+.footer-links { margin-bottom: 20px; }
+.footer-links a { color: var(--gray); text-decoration: none; }
+.footer-links a:hover { color: var(--light); }
+
 @media (max-width: 640px) {
   .terms-row { grid-template-columns: 1fr; gap: 6px; }
   .quote-grid { grid-template-columns: 1fr; }
