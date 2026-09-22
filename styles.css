@@ -1238,6 +1238,7 @@ p { margin: 0; }
 
 blockquote.quote { margin: 0; }
 .quote cite { display: block; }
+.quote-photo { display: block; width: 100%; height: auto; margin-bottom: 20px; }
 
 /* ── Главная: слоган, боли, этапы перехода ── */
 
