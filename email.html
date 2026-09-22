@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Оставить почту — Уникалисты</title>
-  <meta name="description" content="Оставь почту — напишу о старте побега и живых встречах тусовки. Одно письмо, когда есть что сказать. Без спама.">
+  <title>Письмо раз в две недели — Уникалисты</title>
+  <meta name="description" content="То, что я вижу по ходу собственного перехода. Что пробую, что работает, что нет и на чём спотыкаюсь. Раз в две недели, без прогревов.">
   <link rel="icon" type="image/png" href="assets/y-acid.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,8 +26,8 @@
       <div class="email-box">
         <a class="back" href="index.html">← На главную</a>
         <span class="chip">Почта</span>
-        <h1 style="margin-top: 20px;">Узнай о старте первым</h1>
-        <p class="lead muted">Напишу, когда откроется набор на побег или появится дата живой встречи. Никаких цепочек и прогревов — одно письмо, когда есть что сказать.</p>
+        <h1 style="margin-top: 20px;">Письмо раз в две недели</h1>
+        <p class="lead muted">То, что я вижу по ходу собственного перехода. Что пробую, что работает, что нет и на чём спотыкаюсь.</p>
 
         <!-- Сбор почт в Google Таблицу. Как настроить — см. Настройка_сбора_почты.md
              в корне проекта. После настройки замени YOUR_SCRIPT_URL на URL веб-приложения
@@ -35,12 +35,41 @@
         <form class="email-form" id="emailForm" action="https://script.google.com/macros/s/AKfycbxSYI1Tc9A7ZyHe2GEdT0HxUAN778xr4moOz_j5wXmmenLCz_NXBTW3DZ_1ygkDrcVxGw/exec" method="POST">
           <label for="email" class="sr-only" style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0);">Твоя почта</label>
           <input type="email" id="email" name="email" placeholder="Твоя почта" required autocomplete="email" inputmode="email">
-          <button class="btn" type="submit" id="submitBtn">Отправить</button>
+          <button class="btn" type="submit" id="submitBtn">Подписаться</button>
         </form>
         <p class="email-note">Отписаться можно в одно нажатие, обид не будет.</p>
 
         <div class="email-success" id="successBox" role="status" aria-live="polite">
           <p>Готово. Напишу, когда появится что-то стоящее твоего времени.</p>
+        </div>
+
+        <div style="margin-top: 56px; padding-top: 40px; border-top: 1px solid var(--border);">
+          <h2 style="font-size: 22px; margin-bottom: 20px;">Что приходит</h2>
+          <div style="margin-bottom: 20px;">
+            <h3 style="margin-bottom: 6px;">Разборы уникалистов</h3>
+            <p class="muted">Из чего собрано дело человека, от чего он отказался, хотя мог, где у него ломалось и что из этого можно взять себе. Не только звёзды и обязательно контрпримеры — те, кто не дошёл.</p>
+          </div>
+          <div style="margin-bottom: 20px;">
+            <h3 style="margin-bottom: 6px;">На что я потратил больше десяти миллионов и что из этого сработало</h3>
+            <p class="muted">Обучение, стратсессии, продукты для бизнеса. Рынок с позиции покупателя: что работает, что нет и чем честный продукт отличается от красивой обёртки.</p>
+          </div>
+          <div>
+            <h3 style="margin-bottom: 6px;">Мой собственный переход</h3>
+            <p class="muted">Вышел из операционки бизнеса, который основал, и собираю дело вокруг личности. Пишу по ходу, а не по итогам — потому что итогов пока нет.</p>
+          </div>
+        </div>
+
+        <div style="margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--border);">
+          <h2 style="font-size: 22px; margin-bottom: 12px;">Чего не будет</h2>
+          <p class="muted" style="margin-bottom: 8px;">Цепочек и прогревов.</p>
+          <p class="muted" style="margin-bottom: 8px;">Писем ради писем — пишу, когда есть что сказать.</p>
+          <p class="muted">Продажи в каждом письме: если что-то открывается, скажу один раз и вернусь к делу.</p>
+        </div>
+
+        <div style="margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--border);">
+          <p class="muted" style="margin-bottom: 20px;">Если ты в переходе, но пока не готов ни разговаривать, ни подавать заявку — это самый низкий порог, который у меня есть. Читай столько, сколько нужно.</p>
+          <p style="margin-bottom: 10px;"><a href="consultation.html" style="color: var(--lime);">Разговор — бесплатная консультация, 40 минут, четыре места в месяц →</a></p>
+          <p><a href="community.html#заявка" style="color: var(--lime);">Среда — заявка в сообщество, пять вопросов →</a></p>
         </div>
       </div>
     </div>
@@ -88,7 +117,7 @@
         successBox.style.display = "block";
       } else {
         submitBtn.disabled = false;
-        submitBtn.textContent = "Отправить";
+        submitBtn.textContent = "Подписаться";
         alert("Не получилось отправить. Попробуй ещё раз чуть позже.");
       }
     });
