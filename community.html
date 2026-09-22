@@ -65,6 +65,22 @@
     </div>
   </section>
 
+  <!-- ── Мастер-классы ── -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Мастер-классы</h2>
+        <p class="lead muted">Рабочие встречи с гостями и разборы практики. Регулярно, для участников сообщества.</p>
+      </div>
+      <a class="card card--link" href="ai-workshop.html">
+        <span class="card-num">Пример мастер-класса</span>
+        <h3>AI Hands-On Workshop</h3>
+        <p>Рабочая встреча по пятницам в Zoom. Для тех, кому некогда разбираться самому и непонятно, с чего начать применять ИИ в своих задачах.</p>
+        <span class="card-go">Подробнее →</span>
+      </a>
+    </div>
+  </section>
+
   <!-- ── Почему это работает ── -->
   <section class="section">
     <div class="wrap">
@@ -162,47 +178,22 @@
     <div class="wrap">
       <div class="section-head">
         <h2>Расскажи о себе</h2>
-        <p class="lead muted">Пять вопросов. Заполненная заявка — уже начало работы.</p>
+        <p class="lead muted">Пять вопросов. Ответь на них и пришли мне в Telegram — заполненная заявка уже начало работы.</p>
       </div>
 
-      <!-- Сбор заявок в Google Таблицу — тот же механизм, что на email.html.
-           Настроить приём этих полей можно в том же Apps Script (см. Настройка_сбора_почты.md).
-           Пока форма не подключена к отдельному скрипту — показывает подтверждение, но не сохраняет. -->
-      <form class="app-form" id="communityForm" action="https://script.google.com/macros/s/YOUR_SCRIPT_URL/exec" method="POST">
-        <div class="field">
-          <label for="c-contact">Телеграм или почта</label>
-          <input type="text" id="c-contact" name="contact" placeholder="Куда ответить" required>
-        </div>
-        <div class="field">
-          <label for="c-q1">1 · Что ты строишь или хочешь строить?</label>
-          <textarea id="c-q1" name="q1" required></textarea>
-        </div>
-        <div class="field">
-          <label for="c-q2">2 · Где ты сейчас?</label>
-          <textarea id="c-q2" name="q2" required></textarea>
-        </div>
-        <div class="field">
-          <label for="c-q3">3 · Что уже пробовал и что из этого не сработало?</label>
-          <textarea id="c-q3" name="q3" required></textarea>
-        </div>
-        <div class="field">
-          <label for="c-q4">4 · Сколько часов в неделю ты реально готов на это тратить?</label>
-          <textarea id="c-q4" name="q4" required></textarea>
-        </div>
-        <div class="field">
-          <label for="c-q5">5 · Почему именно сейчас?</label>
-          <textarea id="c-q5" name="q5" required></textarea>
-        </div>
-        <div>
-          <button class="btn" type="submit" id="communitySubmit">Отправить заявку</button>
-        </div>
-      </form>
+      <ul class="app-questions">
+        <li><span>1</span><p>Что ты строишь или хочешь строить?</p></li>
+        <li><span>2</span><p>Где ты сейчас?</p></li>
+        <li><span>3</span><p>Что уже пробовал и что из этого не сработало?</p></li>
+        <li><span>4</span><p>Сколько часов в неделю ты реально готов на это тратить?</p></li>
+        <li><span>5</span><p>Почему именно сейчас?</p></li>
+      </ul>
+
+      <div class="hero-actions" style="margin-top: 28px;">
+        <a class="btn" href="https://t.me/rmgrishin" target="_blank" rel="noopener">Отправить заявку в Telegram</a>
+      </div>
       <p class="muted" style="margin-top: 18px;">Отвечу в течение недели. Следующий набор — в октябре.</p>
       <p class="muted" style="margin-top: 8px; max-width: 640px;">Что получает оставивший заявку: первоочередное право на следующий набор и письмо раз в две недели — то, что я вижу по ходу собственного перехода.</p>
-
-      <div class="email-success" id="communitySuccess" role="status" aria-live="polite" style="margin-top: 20px;">
-        <p>Заявка получена. Отвечу в течение недели.</p>
-      </div>
     </div>
   </section>
 
@@ -217,37 +208,6 @@
   </footer>
 
   <script src="script.js" defer></script>
-  <script>
-    const cForm = document.getElementById("communityForm");
-    const cSuccess = document.getElementById("communitySuccess");
-    const cSubmit = document.getElementById("communitySubmit");
-
-    cForm.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      cSubmit.disabled = true;
-      cSubmit.textContent = "Отправляем…";
-
-      const isConfigured = !cForm.action.includes("YOUR_SCRIPT_URL");
-      let ok = true;
-
-      if (isConfigured) {
-        try {
-          await fetch(cForm.action, { method: "POST", body: new FormData(cForm), mode: "no-cors" });
-        } catch {
-          ok = false;
-        }
-      }
-
-      if (ok) {
-        cForm.style.display = "none";
-        cSuccess.style.display = "block";
-      } else {
-        cSubmit.disabled = false;
-        cSubmit.textContent = "Отправить заявку";
-        alert("Не получилось отправить. Попробуй ещё раз чуть позже.");
-      }
-    });
-  </script>
 
 </body>
 </html>
