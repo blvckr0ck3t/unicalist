@@ -1505,3 +1505,237 @@ blockquote.quote { margin: 0; }
   .hero-list { columns: 1; }
   .hero-list li { padding: 4px 0; font-size: 15px; }
 }
+
+/* ── Hero главной: «выйти из сетки» ──
+   Canvas рисует пиксельную сетку; из неё выходит лаймовый пиксель и лесенкой
+   проходит четыре этапа перехода. Статус-бар снизу синхронизирован со сценой (script.js). */
+
+.h-xl { font-size: clamp(34px, 5.4vw, 62px); }
+
+.uhero {
+  --mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100svh - 55px);
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 70% 60% at 28% 55%, rgba(122, 130, 57, 0.08), transparent 70%),
+    var(--charcoal);
+  border-bottom: 1px solid var(--border);
+}
+
+.uhero-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* уголки-лесенки: L из пикселей 8px */
+.uhero-corner {
+  position: absolute;
+  z-index: 2;
+  width: calc(var(--px) * 3);
+  height: calc(var(--px) * 3);
+  background:
+    linear-gradient(var(--gray), var(--gray)) 0 0 / 100% var(--px) no-repeat,
+    linear-gradient(var(--gray), var(--gray)) 0 0 / var(--px) 100% no-repeat;
+  opacity: 0.45;
+  pointer-events: none;
+}
+.uhero-corner--tl { top: 0; left: 0; }
+.uhero-corner--tr { top: 0; right: 0; transform: scaleX(-1); }
+.uhero-corner--bl { bottom: 0; left: 0; transform: scaleY(-1); }
+.uhero-corner--br { bottom: 0; right: 0; transform: scale(-1, -1); }
+
+/* технические полосы сверху и снизу */
+.uhero-bar {
+  position: relative;
+  z-index: 2;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray);
+}
+.uhero-bar--top { border-bottom: 1px solid var(--border); }
+.uhero-bar--bottom {
+  border-top: 1px solid var(--border);
+  background: rgba(39, 39, 39, 0.6);
+  backdrop-filter: blur(6px);
+}
+
+.uhero-bar-in {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 12px 24px;
+}
+
+.uhero-bar-r {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  white-space: nowrap;
+}
+
+.uhero-sep { width: 1px; height: 12px; background: var(--gray); opacity: 0.5; }
+
+.uhero-dot {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  background: var(--gray);
+  opacity: 0.6;
+}
+
+/* основная часть: слева сцена, справа текст */
+.uhero-body {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.uhero-art { align-self: stretch; min-height: 420px; }
+
+.uhero-text { max-width: 520px; }
+
+.uhero-rule {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray);
+}
+.uhero-rule em { font-style: normal; }
+.uhero-rule span { flex: 1; height: 1px; background: var(--gray); opacity: 0.4; }
+.uhero-rule > span:first-child { flex: 0 0 32px; }
+.uhero-rule--foot { margin: 36px 0 0; font-size: 10px; }
+
+.uhero-title {
+  font-size: clamp(36px, 4.6vw, 58px);
+  letter-spacing: 0.01em;
+  line-height: 1.02;
+}
+.uhero-title span {
+  display: block;
+  margin-top: 12px;
+  font-size: 0.46em;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  color: var(--gray);
+}
+
+/* ряд серых пикселей, один из которых — лаймовый */
+.uhero-pixels {
+  position: relative;
+  width: 236px;
+  height: 4px;
+  margin: 24px 0 22px;
+  background: repeating-linear-gradient(90deg, rgba(142, 142, 142, 0.5) 0 4px, transparent 4px 12px);
+}
+.uhero-pixels::after {
+  content: "";
+  position: absolute;
+  left: 144px;
+  top: -4px;
+  width: 12px;
+  height: 12px;
+  background: var(--lime);
+}
+
+.uhero-lead { font-size: clamp(17px, 1.6vw, 19px); }
+
+.uhero-note {
+  margin-top: 16px;
+  padding-left: 16px;
+  border-left: 2px solid var(--olive);
+  color: var(--gray);
+  font-size: 15px;
+}
+
+.uhero .hero-actions { margin-top: 32px; }
+
+/* этапы перехода в нижней полосе */
+.uhero-stages {
+  display: flex;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  white-space: nowrap;
+}
+.uhero-stages li { opacity: 0.45; transition: color 0.3s ease, opacity 0.3s ease; }
+.uhero-stages li + li::before { content: "›"; margin-right: 10px; color: var(--gray); opacity: 0.6; }
+.uhero-stages li.is-done { opacity: 0.9; }
+.uhero-stages li.is-active { opacity: 1; color: var(--lime); }
+
+.uhero-pulse { display: inline-flex; gap: 4px; }
+.uhero-pulse i {
+  width: 4px;
+  height: 4px;
+  background: var(--gray);
+  animation: uhero-pulse 1.2s steps(3) infinite;
+}
+.uhero-pulse i:nth-child(2) { animation-delay: 0.2s; }
+.uhero-pulse i:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes uhero-pulse {
+  0%, 100% { opacity: 0.25; }
+  50% { opacity: 1; }
+}
+
+@media (max-width: 900px) {
+  .uhero-body {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    align-items: start;
+    padding: 16px 24px 32px;
+  }
+  .uhero-art { min-height: 0; height: clamp(200px, 34vh, 320px); }
+  .uhero-text { max-width: 640px; }
+  .uhero-bar--top .uhero-bar-r { display: none; }
+}
+
+@media (max-width: 640px) {
+  .uhero-body { padding: 8px 16px 24px; }
+  .uhero-bar-in { padding: 10px 16px; font-size: 10px; }
+  .uhero-art { height: clamp(140px, 22vh, 200px); }
+  .uhero-title span { margin-top: 8px; }
+  .uhero-lead { font-size: 16px; }
+  .uhero-pixels { margin: 18px 0 16px; }
+  .uhero-note { font-size: 14px; }
+  .uhero .hero-actions { margin-top: 24px; }
+  .uhero-rule--foot { margin-top: 24px; }
+  /* на телефоне в полосе виден только текущий этап */
+  .uhero-stages li { display: none; }
+  .uhero-stages li.is-active { display: block; }
+  .uhero-stages li::before { display: none; }
+
+  .snap .uhero {
+    scroll-snap-align: start;
+    min-height: calc(100dvh - 55px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .uhero-pulse i { animation: none; opacity: 0.6; }
+  .uhero-stages li { transition: none; }
+}
