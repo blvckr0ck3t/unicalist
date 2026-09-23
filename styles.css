@@ -1424,3 +1424,19 @@ blockquote.quote { margin: 0; }
   .letter { grid-template-columns: 1fr; gap: 14px; padding: 16px; }
   .letter-photo { aspect-ratio: 16 / 9; }
 }
+
+/* Кнопка «Оставить почту» в шапке — тот же пиксельный силуэт, что у .btn, в масштабе ступени 4px */
+.nav-cta {
+  padding: 10px 20px;
+  clip-path: polygon(
+    8px 0, calc(100% - 8px) 0,
+    calc(100% - 8px) 4px, calc(100% - 4px) 4px, calc(100% - 4px) 8px, 100% 8px,
+    100% calc(100% - 8px), calc(100% - 4px) calc(100% - 8px),
+    calc(100% - 4px) calc(100% - 4px), calc(100% - 8px) calc(100% - 4px), calc(100% - 8px) 100%,
+    8px 100%, 8px calc(100% - 4px), 4px calc(100% - 4px), 4px calc(100% - 8px), 0 calc(100% - 8px),
+    0 8px, 4px 8px, 4px 4px, 8px 4px
+  );
+}
+@media (max-width: 900px) {
+  .nav-cta--m { padding: 10px 16px; }
+}
