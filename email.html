@@ -35,14 +35,14 @@
       <div class="email-box">
         <a class="back" href="index.html">← На главную</a>
         <span class="chip">Почта</span>
-        <h1 style="margin-top: 20px;">Письмо раз в две недели</h1>
+        <h1>Письмо раз в две недели</h1>
         <p class="lead muted">То, что я вижу по ходу собственного перехода.<br>Что пробую, что работает, что нет и на чём спотыкаюсь.</p>
 
         <!-- Сбор почт в Google Таблицу. Как настроить — см. Настройка_сбора_почты.md
              в корне проекта. После настройки замени YOUR_SCRIPT_URL на URL веб-приложения
              из Apps Script. Пока не заменён — форма показывает подтверждение, но не сохраняет. -->
         <form class="email-form" id="emailForm" action="https://script.google.com/macros/s/AKfycbxSYI1Tc9A7ZyHe2GEdT0HxUAN778xr4moOz_j5wXmmenLCz_NXBTW3DZ_1ygkDrcVxGw/exec" method="POST">
-          <label for="email" class="sr-only" style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0);">Твоя почта</label>
+          <label for="email" class="sr-only">Твоя почта</label>
           <input type="email" id="email" name="email" placeholder="Твоя почта" required autocomplete="email" inputmode="email">
           <button class="btn" type="submit" id="submitBtn">Подписаться</button>
         </form>
@@ -52,38 +52,38 @@
           <p>Готово. Напишу, когда появится что-то стоящее твоего времени.</p>
         </div>
 
-        <div style="margin-top: 56px; padding-top: 40px; border-top: 1px solid var(--border);">
-          <h2 style="font-size: 22px; margin-bottom: 20px;">Что приходит</h2>
-          <div style="margin-bottom: 20px;">
-            <h3 style="margin-bottom: 6px;">Разборы уникалистов</h3>
+        <div class="email-block stack">
+          <h2 class="h-sm">Что приходит</h2>
+          <div>
+            <h3>Разборы уникалистов</h3>
             <p class="muted">Из чего собрано дело человека, от чего он отказался, хотя мог, где у него ломалось и что из этого можно взять себе. Не только звёзды и обязательно контрпримеры — те, кто не дошёл.</p>
           </div>
-          <div style="margin-bottom: 20px;">
-            <h3 style="margin-bottom: 6px;">На что я потратил больше десяти миллионов и что из этого сработало</h3>
+          <div>
+            <h3>На что я потратил больше десяти миллионов и что из этого сработало</h3>
             <p class="muted">Обучение, стратсессии, продукты для бизнеса.<br>Рынок с позиции покупателя: что работает, что нет и чем честный продукт отличается от красивой обёртки.</p>
           </div>
           <div>
-            <h3 style="margin-bottom: 6px;">Мой собственный переход</h3>
+            <h3>Мой собственный переход</h3>
             <p class="muted">Вышел из операционки бизнеса, который основал, и собираю дело вокруг личности. Пишу по ходу, а не по итогам — потому что итогов пока нет.</p>
           </div>
         </div>
 
-        <div style="margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--border);">
-          <h2 style="font-size: 22px; margin-bottom: 12px;">Чего не будет</h2>
-          <p style="margin-bottom: 8px;">Цепочек и прогревов.</p>
-          <p style="margin-bottom: 8px;">Писем ради писем — пишу, когда есть что сказать.</p>
+        <div class="email-block stack stack--tight">
+          <h2 class="h-sm">Чего не будет</h2>
+          <p>Цепочек и прогревов.</p>
+          <p>Писем ради писем — пишу, когда есть что сказать.</p>
           <p>Продажи в каждом письме: если что-то открывается, скажу один раз и вернусь к делу.</p>
         </div>
 
-        <div style="margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--border);">
+        <div class="email-block">
           <div class="pull">
             <p>Если ты в переходе, но пока не готов ни разговаривать, ни подавать заявку — это самый низкий порог, который у меня есть. Читай столько, сколько нужно.</p>
           </div>
         </div>
 
-        <div style="margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--border);">
-          <p style="margin-bottom: 10px;"><a href="consultation.html" style="color: var(--lime);">Разговор — бесплатная консультация, 40 минут, четыре места в месяц →</a></p>
-          <p><a href="community.html#заявка" style="color: var(--lime);">Среда — заявка в сообщество, пять вопросов →</a></p>
+        <div class="email-block stack stack--tight">
+          <p><a class="row-link" href="consultation.html">Разговор — бесплатная консультация, 40 минут, четыре места в месяц →</a></p>
+          <p><a class="row-link" href="community.html#заявка">Среда — заявка в сообщество, пять вопросов →</a></p>
         </div>
       </div>
     </div>
@@ -94,6 +94,7 @@
       <p class="footer-brand">Уникалисты · Роман Гришин</p>
       <p class="footer-media"><a href="https://t.me/unicalist" target="_blank" rel="noopener">Канал «Уникалисты»</a> · <a href="https://www.youtube.com/@unicalist" target="_blank" rel="noopener">YouTube</a> · <a href="https://www.instagram.com/rmgrishin/" target="_blank" rel="noopener">Инстаграм</a></p>
       <p class="footer-nav"><a href="individual.html">Индивидуальная работа</a> · <a href="community.html">Сообщество</a> · <a href="master-group.html">Мастер-группа</a> · <a href="about.html">Обо мне</a> · <a href="email.html">Письмо</a></p>
+      <p class="disclaimer">Уникалисты — это место, где находят единомышленников. Не заменяет терапию.<br>Если сейчас совсем тяжело, обратись к специалисту. Это не слабость.</p>
       <p>© 2026</p>
     </div>
   </footer>

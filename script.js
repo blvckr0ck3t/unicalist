@@ -8,7 +8,7 @@
   /* ── 1. Появление при скролле (работает и без мыши) ── */
 
   const revealTargets = document.querySelectorAll(
-    ".section-head, .card, .not-for, .no-promises p, .list-plain li, .final h2, .final p, .final .btn"
+    ".section-head, .card, .not-for, .list-plain li, .final h2, .final p, .final .btn"
   );
 
   if (!reduced) {

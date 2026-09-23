@@ -91,13 +91,6 @@ p { margin: 0; }
   background: var(--lime);
 }
 
-.chip--ghost {
-  background: transparent;
-  color: var(--gray);
-  border: 1px solid var(--border);
-}
-.chip--ghost::after { display: none; }
-
 /* ── Кнопки ── */
 
 .btn {
@@ -254,7 +247,6 @@ p { margin: 0; }
 
 .grid--2 { grid-template-columns: repeat(2, 1fr); }
 .grid--3 { grid-template-columns: repeat(3, 1fr); }
-.grid--4 { grid-template-columns: repeat(4, 1fr); }
 
 .card {
   background: var(--charcoal-2);
@@ -353,63 +345,6 @@ p { margin: 0; }
 }
 .back:hover { color: var(--light); }
 
-/* ── Кейс-история ── */
-
-.story {
-  display: grid;
-  grid-template-columns: 240px 1fr;
-  gap: clamp(28px, 4vw, 56px);
-  align-items: start;
-}
-
-.story-side {
-  position: sticky;
-  top: 96px;
-  border-left: 4px solid var(--lime);
-  padding-left: 20px;
-}
-
-.story-fact + .story-fact {
-  margin-top: 26px;
-  padding-top: 26px;
-  border-top: 1px solid var(--border);
-}
-
-.story-fact p { color: var(--gray); font-size: 15px; }
-.story-fact .fact-n { margin-bottom: 8px; }
-
-.story-body p { color: var(--gray); margin-bottom: 16px; }
-.story-body a { color: var(--lime); }
-
-.story-lead {
-  color: var(--light) !important;
-  font-size: clamp(18px, 2vw, 21px);
-}
-
-.story-h {
-  margin-top: 36px;
-  margin-bottom: 14px;
-  color: var(--light);
-}
-
-.story-out {
-  margin-top: 36px;
-  padding: 26px;
-  background: var(--charcoal-2);
-  border: 1px solid var(--border);
-}
-
-.story-out h3 { margin-bottom: 16px; }
-.story-out p:last-child { margin-bottom: 0; }
-.story-out strong { color: var(--light); font-weight: 800; }
-
-.story-note {
-  margin-top: 28px;
-  padding-top: 16px;
-  border-top: 1px solid var(--border);
-  font-size: 14px;
-}
-
 /* ── Блок «обо мне» ── */
 
 .about {
@@ -461,66 +396,6 @@ p { margin: 0; }
 }
 
 .about-text p:last-of-type { color: var(--light); }
-
-.about-socials {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 26px;
-}
-
-.about-socials a {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  min-height: 44px;
-  padding: 10px 16px;
-  border: 1px solid var(--gray);
-  color: var(--light);
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: 600;
-  transition: border-color 0.2s ease, color 0.2s ease;
-}
-
-.about-socials a:hover {
-  border-color: var(--lime);
-  color: var(--lime);
-}
-
-.about-socials svg { width: 20px; height: 20px; }
-
-/* ── Полоса «без обещаний» ── */
-
-.no-promises {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin-top: 48px;
-  padding-top: 40px;
-  border-top: 1px solid var(--border);
-}
-
-/* та же полоса, но под собственным заголовком секции */
-.no-promises--flush {
-  margin-top: 0;
-  padding-top: 0;
-  border-top: none;
-}
-
-.no-promises p strong {
-  display: block;
-  color: var(--light);
-  text-transform: uppercase;
-  font-size: 14px;
-  letter-spacing: 0.04em;
-  margin-bottom: 6px;
-}
-
-.no-promises p {
-  color: var(--gray);
-  font-size: 15px;
-}
 
 /* ── Побег: список дней ── */
 
@@ -590,15 +465,6 @@ p { margin: 0; }
   margin-bottom: 24px;
 }
 
-.footer-row {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.footer-row img { height: 20px; width: auto; opacity: 0.7; }
-
 /* ── Страница email ── */
 
 .page-email {
@@ -652,14 +518,6 @@ p { margin: 0; }
 
 .email-success p { color: var(--light); }
 
-/* ── Страница «Как со мной можно поработать» ──
-   Тот же charcoal + лайм + Manrope. Горы, туман и знаки перерисованы
-   по пиксельной сетке --px, поэтому у всех SVG shape-rendering: crispEdges. */
-
-.hl { color: var(--lime); }
-
-.page-about h2 .hl { color: var(--lime); }
-
 /* Шапка */
 
 /* Сцена рисуется во всю ширину окна и держит собственную пропорцию 1440×320,
@@ -688,43 +546,6 @@ p { margin: 0; }
 
 .about-hero .lead { margin-bottom: 32px; }
 
-.about-hero__sig {
-  color: var(--gray);
-  text-transform: uppercase;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-}
-
-/* Две колонки текста */
-
-.col2 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px clamp(24px, 4vw, 56px);
-}
-
-.col2 p { color: var(--gray); margin-bottom: 14px; }
-.col2 p:last-child { margin-bottom: 0; }
-
-.col2--ruled {
-  margin-top: clamp(36px, 6vh, 56px);
-  padding-top: 32px;
-  border-top: 1px solid var(--border);
-}
-
-.col2--ruled h3 { margin-bottom: 12px; }
-
-/* Знаки у трёх карточек */
-
-.mark {
-  display: block;
-  width: 56px;
-  height: 56px;
-  margin-bottom: 20px;
-  color: var(--gray);
-}
-
 .page-about .card h3 span {
   display: block;
   text-transform: none;
@@ -734,133 +555,6 @@ p { margin: 0; }
   color: var(--gray);
   margin-top: 6px;
 }
-
-/* Схема «взгляд с горы» */
-
-.view {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(24px, 4vw, 56px);
-  align-items: center;
-}
-
-.view-text p { margin-bottom: 16px; }
-.view-text p:last-child { margin-bottom: 0; color: var(--gray); }
-.view-text strong { color: var(--lime); font-weight: 800; }
-
-.view-fig { margin: 0; }
-.view-fig svg { width: 100%; height: auto; display: block; color: var(--gray); }
-
-.view-lbl {
-  fill: var(--gray);
-  font-family: "Manrope", sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-}
-
-/* Факты */
-
-.facts {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-  gap: 36px clamp(20px, 2.6vw, 40px);
-}
-
-.fact-n {
-  display: block;
-  font-weight: 800;
-  font-size: clamp(26px, 2.5vw, 32px);
-  line-height: 1;
-  letter-spacing: -0.02em;
-  margin-bottom: 14px;
-}
-
-.fact .card-num { display: block; margin-bottom: 8px; }
-.fact p { color: var(--gray); font-size: 15px; }
-
-.facts-foot {
-  margin-top: clamp(32px, 5vh, 48px);
-  padding-top: 24px;
-  border-top: 1px solid var(--border);
-  max-width: 720px;
-}
-
-/* Мой главный кейс */
-
-.case {
-  display: grid;
-  grid-template-columns: 300px 1fr;
-  gap: clamp(24px, 4vw, 56px);
-  align-items: start;
-}
-
-.case-head .card-num { display: block; }
-.case h2 { font-size: clamp(46px, 7vw, 88px); line-height: 0.92; }
-.case-text p { color: var(--gray); margin-bottom: 16px; }
-.case-text p:first-child { color: var(--light); }
-
-.case-note {
-  margin-top: 28px !important;
-  padding-top: 16px;
-  border-top: 1px solid var(--border);
-  font-size: 14px;
-}
-
-/* Кому по пути */
-
-.fit {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0 clamp(20px, 4vw, 64px);
-}
-
-.fit-h {
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--border);
-}
-
-.fit-h--no { color: var(--gray); }
-
-.fit-i {
-  display: flex;
-  gap: 14px;
-  align-items: flex-start;
-  padding: 18px 0;
-  border-bottom: 1px solid var(--border);
-  font-size: 16px;
-}
-
-.fit-i svg { flex: none; width: 14px; height: 14px; margin-top: 6px; }
-.fit-i--yes svg { color: var(--lime); }
-.fit-i--no { color: var(--gray); }
-.fit-i--no svg { color: var(--gray); }
-
-/* Приглашение */
-
-/* Гряда на горизонте: пропорция 1440×160 — высота 11.11vw. */
-.invite {
-  position: relative;
-  overflow: hidden;
-  border-top: 1px solid var(--border);
-  padding: clamp(72px, 11vh, 132px) 0 calc(11.11vw + clamp(40px, 6vh, 72px));
-}
-
-.invite__horizon {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-}
-
-.invite__horizon svg { width: 100%; height: auto; display: block; }
-
-.invite .wrap { position: relative; z-index: 1; }
-.invite h2 { margin-bottom: 20px; }
-.invite h2 .ln { display: inline; }
-@media (min-width: 720px) { .invite h2 .ln { display: block; } }
-.invite .lead { margin-bottom: 36px; }
 
 /* Ссылка «Подробнее обо мне» в блоке на главной */
 
@@ -967,59 +661,15 @@ p { margin: 0; }
 
 /* ── Адаптив ── */
 
-/* Десктоп: раскладка секций, разбитых на mob-screen */
-@media (min-width: 641px) {
-  #escape .wrap {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0 20px;
-    grid-template-areas:
-      "head head"
-      "list notfor"
-      "cta cta";
-  }
-  #escape .mob-screen { display: contents; }
-  #escape .section-head { grid-area: head; }
-  #escape .list-plain { grid-area: list; }
-  #escape .not-for { grid-area: notfor; }
-  #escape .cta-row { grid-area: cta; }
-  #crew .mob-screen + .mob-screen { margin-top: 32px; }
-}
-
 @media (max-width: 900px) {
-  .grid--4 { grid-template-columns: repeat(2, 1fr); }
   .grid--3 { grid-template-columns: 1fr; }
-  .no-promises { grid-template-columns: repeat(2, 1fr); }
   .about { grid-template-columns: 1fr; gap: 28px; }
   .about-photo { max-width: 320px; }
-
-  /* about.html */
-  .view { grid-template-columns: 1fr; }
-  .view-fig { max-width: 520px; margin-top: 8px; }
-  .case { grid-template-columns: 1fr; }
-
-  /* кейс-история: цифры уходят наверх в строку */
-  .story { grid-template-columns: 1fr; }
-  .story-side {
-    position: static;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    border-left: none;
-    border-top: 4px solid var(--lime);
-    padding-left: 0;
-    padding-top: 20px;
-  }
-  .story-fact + .story-fact {
-    margin-top: 0;
-    padding-top: 0;
-    border-top: none;
-  }
 }
 
 @media (max-width: 640px) {
   body { font-size: 16px; }
-  .grid--2, .grid--4, .no-promises { grid-template-columns: 1fr; }
+  .grid--2 { grid-template-columns: 1fr; }
   .grid { gap: 14px; }
   .pixel-stairs { display: none; }
 
@@ -1051,23 +701,7 @@ p { margin: 0; }
 
   .snap .hero > .wrap, .snap .section > .wrap, .snap .final > .wrap { width: 100%; }
 
-  /* секция из нескольких слайдов: экраном становится каждый .mob-screen */
-  .snap .section--multi {
-    display: block;
-    min-height: 0;
-    scroll-snap-align: none;
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-
-  .snap .mob-screen {
-    min-height: calc(100dvh - 55px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    scroll-snap-align: start;
-    padding: 24px 0;
-  }
+  
 
   /* компактнее, чтобы блок умещался в экран */
   .hero-wordmark { width: 72vw; margin-bottom: 28px; }
@@ -1086,34 +720,12 @@ p { margin: 0; }
   .about { padding: 20px; gap: 18px; margin-top: 32px; }
   .about-photo { max-width: 170px; }
   .about-text p { font-size: 15px; margin-bottom: 10px; }
-  .about-socials { margin-top: 18px; }
-  .about-socials a { padding: 9px 12px; font-size: 14px; }
   .list-plain li { padding: 13px 0; font-size: 15px; }
-  .no-promises { margin-top: 28px; padding-top: 24px; gap: 14px; }
 
   /* страницы продуктов */
   .prod-hero .back { margin-bottom: 24px; }
-  .story-side { grid-template-columns: 1fr 1fr; }
-  .story-lead { font-size: 17px; }
-  .story-out { padding: 20px; }
   .card-go { margin-top: 16px; }
-
-  /* about.html: обычный поток, без скролл-снапа */
-  .col2 { grid-template-columns: 1fr; }
-  .mark { width: 48px; height: 48px; margin-bottom: 16px; }
-  .facts { gap: 28px; }
-  .case-head { margin-bottom: 20px; }
-  .fit { grid-template-columns: 1fr; }
-  .fit-h { order: 1; }
-  .fit-i--yes { order: 2; }
-  .fit-h--no { order: 3; margin-top: clamp(32px, 6vh, 48px); }
-  .fit-i--no { order: 4; }
-  .fit-i { font-size: 15px; padding: 15px 0; }
-  /* подписи на схеме заданы в единицах SVG — увеличиваем,
-     чтобы после масштабирования они остались читаемыми */
-  .view-lbl { font-size: 19px; }
-  .invite { padding-bottom: clamp(130px, 22vh, 190px); }
-  .invite__horizon { height: clamp(100px, 18vh, 150px); }
+  
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1177,44 +789,6 @@ p { margin: 0; }
 .quote p { color: var(--light); font-size: 16px; margin-bottom: 14px; }
 .quote cite { color: var(--gray); font-style: normal; font-size: 14px; font-weight: 700; }
 
-/* ── Форма (заявка/консультация) ── */
-
-.app-form {
-  display: grid;
-  gap: 24px;
-  max-width: 640px;
-  margin-top: 40px;
-}
-
-.field label {
-  display: block;
-  color: var(--gray);
-  text-transform: uppercase;
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  margin-bottom: 10px;
-}
-
-.field input[type="text"],
-.field textarea {
-  width: 100%;
-  background: var(--charcoal-2);
-  border: 1px solid var(--gray);
-  color: var(--light);
-  font-family: inherit;
-  font-size: 16px;
-  padding: 14px 16px;
-}
-
-.field textarea { resize: vertical; min-height: 100px; }
-
-.field input:focus, .field textarea:focus {
-  outline: 2px solid var(--lime);
-  outline-offset: 0;
-  border-color: transparent;
-}
-
 .app-questions {
   display: grid;
   gap: 4px;
@@ -1238,7 +812,6 @@ p { margin: 0; }
 
 blockquote.quote { margin: 0; }
 .quote cite { display: block; }
-.quote-photo { display: block; width: 100%; height: auto; margin-bottom: 20px; }
 
 /* ── Главная: слоган, боли, этапы перехода ── */
 
@@ -1250,8 +823,6 @@ blockquote.quote { margin: 0; }
   letter-spacing: 0.04em;
   margin-bottom: 40px;
 }
-
-.hero-sub { margin-bottom: 20px; }
 
 .hero-list { max-width: 760px; margin-top: 12px; }
 
@@ -1267,12 +838,6 @@ blockquote.quote { margin: 0; }
 }
 
 .stages span { color: var(--lime); padding: 0 6px; }
-
-/* ── Ссылки в подвале ── */
-
-.footer-links { margin-bottom: 20px; }
-.footer-links a { color: var(--gray); text-decoration: none; }
-.footer-links a:hover { color: var(--light); }
 
 @media (max-width: 640px) {
   .terms-row { grid-template-columns: 1fr; gap: 6px; }
@@ -1332,12 +897,24 @@ blockquote.quote { margin: 0; }
 .scheme--wide { max-width: 720px; }
 .scheme--sq { max-width: 200px; }
 
-/* статус в карточке формата */
+/* статус в карточке формата: пиксель-маркер, как в списках */
 .card-status {
-  color: #ff8754;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+  color: var(--light);
   font-weight: 700;
   font-size: 14px;
-  margin-top: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.card-status::before {
+  content: "";
+  flex: none;
+  width: var(--px);
+  height: var(--px);
+  background: var(--olive);
 }
 
 /* цены строками: срок · цена · в месяц */
@@ -1407,7 +984,6 @@ blockquote.quote { margin: 0; }
 }
 
 .stack > * + * { margin-top: 18px; }
-.action p { margin-top: 18px; }
 
 /* ── Подвал по макету ── */
 
@@ -1505,12 +1081,6 @@ blockquote.quote { margin: 0; }
   .hero-list { columns: 1; }
   .hero-list li { padding: 4px 0; font-size: 15px; }
 }
-
-/* ── Hero главной: «выйти из сетки» ──
-   Canvas рисует пиксельную сетку; из неё выходит лаймовый пиксель и лесенкой
-   проходит четыре этапа перехода. Статус-бар снизу синхронизирован со сценой (script.js). */
-
-.h-xl { font-size: clamp(34px, 5.4vw, 62px); }
 
 .uhero {
   --mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
@@ -1738,4 +1308,109 @@ blockquote.quote { margin: 0; }
 @media (prefers-reduced-motion: reduce) {
   .uhero-pulse i { animation: none; opacity: 0.6; }
   .uhero-stages li { transition: none; }
+}
+
+/* ── Общие утилиты ──
+   Одна шкала отступов и несколько текстовых ролей вместо инлайн-стилей. */
+
+.mt-s { margin-top: 14px; }
+.mt-m { margin-top: 20px; }
+.mt-l { margin-top: 32px; }
+.mt-xl { margin-top: 48px; }
+
+.measure { max-width: 760px; }
+
+.h-sm { font-size: 22px; margin-bottom: 16px; }
+
+/* мелкая приписка: условия, пояснения под кнопкой */
+.note { color: var(--gray); font-size: 14px; }
+
+/* сигнальная строка в шапке страницы: набор, формат */
+.status { color: var(--lime); font-weight: 700; font-size: 19px; }
+
+.stack--tight > * + * { margin-top: 8px; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.card p + p { margin-top: 14px; }
+.card .card-lead { color: var(--light); }
+
+.final .final-meta { font-weight: 800; margin-top: -16px; }
+
+/* email: блоки под формой */
+.email-box .chip { margin-bottom: 20px; }
+.email-block {
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+.email-block h3 { margin-bottom: 6px; }
+
+/* ── Письмо клуба на главной: компактно, полный текст раскрывается ── */
+
+.letter {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 24px;
+  align-items: start;
+  max-width: 760px;
+  margin: 32px 0;
+  padding: 20px;
+  background: var(--charcoal-2);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--lime);
+}
+
+.letter-photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.letter-from {
+  color: var(--gray);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 10px;
+}
+
+.letter blockquote { margin: 0; }
+.letter blockquote p { color: var(--light); font-size: 16px; }
+.letter-more p { margin-top: 12px; }
+
+.letter-more summary {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--lime);
+  font-weight: 800;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  list-style: none;
+}
+.letter-more summary::-webkit-details-marker { display: none; }
+.letter-more summary::after { content: " ↓"; }
+.letter-more[open] summary::after { content: " ↑"; }
+.letter-more summary:hover { text-decoration: underline; }
+/* в раскрытом виде кнопка уезжает под текст */
+.letter-more[open] { display: flex; flex-direction: column; }
+.letter-more[open] summary { order: 1; }
+.letter-close,
+.letter-more[open] .letter-open { display: none; }
+.letter-more[open] .letter-close { display: inline; }
+
+@media (max-width: 640px) {
+  .letter { grid-template-columns: 1fr; gap: 14px; padding: 16px; }
+  .letter-photo { aspect-ratio: 16 / 9; }
 }
