@@ -109,22 +109,18 @@
 
   /* ── 5. Параллакс в hero ── */
 
-  const wordmark = document.querySelector(".hero-wordmark");
-  const stairs = document.querySelector(".pixel-stairs");
-  const hero = document.querySelector(".hero");
-
-  if (hero && wordmark) {
-    hero.addEventListener("mousemove", (e) => {
+  // логотип живёт в первом экране, лесенка — во втором: каждый реагирует на свой блок
+  [[".hero-wordmark", -8, -5], [".pixel-stairs", 14, 10]].forEach(([sel, kx, ky]) => {
+    const el = document.querySelector(sel);
+    const box = el && el.closest("header, section");
+    if (!box) return;
+    box.addEventListener("mousemove", (e) => {
       const x = e.clientX / window.innerWidth - 0.5;
       const y = e.clientY / window.innerHeight - 0.5;
-      wordmark.style.transform = `translate(${x * -8}px, ${y * -5}px)`;
-      if (stairs) stairs.style.transform = `translate(${x * 14}px, ${y * 10}px)`;
+      el.style.transform = `translate(${x * kx}px, ${y * ky}px)`;
     });
-    hero.addEventListener("mouseleave", () => {
-      wordmark.style.transform = "";
-      if (stairs) stairs.style.transform = "";
-    });
-  }
+    box.addEventListener("mouseleave", () => { el.style.transform = ""; });
+  });
 })();
 
 /* Мобильное меню */
