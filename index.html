@@ -30,11 +30,63 @@
     </div>
   </nav>
 
+  <!-- ── Hero: выход из матрицы ── -->
+  <header class="uhero" id="top">
+    <canvas class="uhero-canvas" aria-hidden="true"></canvas>
+
+    <!-- уголки-лесенки по периметру -->
+    <span class="uhero-corner uhero-corner--tl" aria-hidden="true"></span>
+    <span class="uhero-corner uhero-corner--tr" aria-hidden="true"></span>
+    <span class="uhero-corner uhero-corner--bl" aria-hidden="true"></span>
+    <span class="uhero-corner uhero-corner--br" aria-hidden="true"></span>
+
+    <div class="uhero-bar uhero-bar--top" aria-hidden="true">
+      <div class="uhero-bar-in">
+        <span>№ 001</span>
+        <span class="uhero-sep"></span>
+        <span>Дело вокруг личности</span>
+        <span class="uhero-bar-r">Старт: ты <i class="uhero-dot"></i> Финиш: твоё дело</span>
+      </div>
+    </div>
+
+    <div class="uhero-body">
+      <div class="uhero-art" aria-hidden="true"></div>
+
+      <div class="uhero-text">
+        <img class="hero-wordmark" src="assets/wordmark-acid.png" alt="Уникалисты" width="1568" height="240">
+        <h1 class="uhero-title">Выйти из матрицы<span>и построить дело вокруг себя</span></h1>
+
+        <div class="uhero-pixels" aria-hidden="true"></div>
+
+        <p class="uhero-lead">Чужие задачи, чужие цели, чужой ритм — так живёт большинство. Уникалисты строят дело вокруг себя: своих талантов, опыта и того, что не могут не делать.</p>
+        <p class="uhero-note">В одиночку такой переход занимает от двух до семи лет. Рядом с теми, кто уже идёт свой путь, — быстрее.</p>
+
+        <div class="hero-actions">
+          <a class="btn" href="consultation.html">Записаться на консультацию</a>
+          <a class="btn btn--ghost" href="#products">Форматы работы</a>
+        </div>
+
+        <div class="uhero-rule uhero-rule--foot" aria-hidden="true"><em>40 мин · онлайн · бесплатно</em><span></span><em>Четыре места в месяц</em></div>
+      </div>
+    </div>
+
+    <div class="uhero-bar uhero-bar--bottom" aria-hidden="true">
+      <div class="uhero-bar-in">
+        <ol class="uhero-stages">
+          <li>Самоопределение</li>
+          <li>Первые деньги</li>
+          <li>Продукт</li>
+          <li>Система</li>
+        </ol>
+        <span class="uhero-bar-r"><span class="uhero-state">◐ Поиск</span><span class="uhero-pulse"><i></i><i></i><i></i></span><span class="uhero-count">Этап 0/4</span></span>
+      </div>
+    </div>
+  </header>
+
   <!-- ── Hero: боль ── -->
-  <header class="hero">
+  <section class="hero">
     <div class="pixel-stairs" aria-hidden="true"></div>
     <div class="wrap">
-      <img class="hero-wordmark" src="assets/wordmark-acid.png" alt="Уникалисты" width="1568" height="240">
       <p class="tagline">Дело вокруг личности, а не наоборот.</p>
 
       <p class="lead">Что чаще всего стоит за «я ищу себя»:</p>
@@ -51,17 +103,21 @@
         <li><span class="marker" aria-hidden="true"></span>Делаешь что-то для себя и никому не показываешь.</li>
         <li><span class="marker" aria-hidden="true"></span>Боишься, что осудят знакомые, которых ты последний раз видел 10 лет назад.</li>
       </ul>
-      <p class="lead" style="margin-top: 28px;">Узнаёшь себя хотя бы в трёх?<br>Твои трудности не уникальны.<br>Свой путь проще найти рядом с теми, кто уже идёт свой.</p>
+      <p class="lead mt-l">Узнаёшь себя хотя бы в трёх?<br>Твои трудности не уникальны.<br>Свой путь проще найти рядом с теми, кто уже идёт свой.</p>
     </div>
-  </header>
+  </section>
 
   <!-- ── Кто такой уникалист ── -->
   <section class="section">
     <div class="wrap">
-      <h1>Создаёт дело жизни вокруг своей уникальности</h1>
-      <p class="lead" style="margin-top: 24px;">Тех, кто живёт и строит дело вокруг своей личности — талантов, навыков, опыта и интересов, — я называю уникалистами.</p>
-      <p class="lead" style="margin-top: 20px;">Уникалист делает то, что у него легко получается, но делает это изо всех сил, потому что не может не делать. И на этом строит своё дело вместо поиска хайповой ниши.</p>
-      <p class="lead" style="margin-top: 20px;">Это может быть дизайн, предпринимательство, работа с людьми или что-то другое. Но это всегда про радость от процесса без ожидания награды за результат. Иными словами — это про творчество как способ бытия.</p>
+      <div class="section-head">
+        <h2>Создаёт дело жизни вокруг своей уникальности</h2>
+      </div>
+      <div class="stack">
+      <p class="lead">Тех, кто живёт и строит дело вокруг своей личности — талантов, навыков, опыта и интересов, — я называю уникалистами.</p>
+      <p class="lead">Уникалист делает то, что у него легко получается, но делает это изо всех сил, потому что не может не делать. И на этом строит своё дело вместо поиска хайповой ниши.</p>
+      <p class="lead">Это может быть дизайн, предпринимательство, работа с людьми или что-то другое. Но это всегда про радость от процесса без ожидания награды за результат. Иными словами — это про творчество как способ бытия.</p>
+      </div>
     </div>
   </section>
 
@@ -71,25 +127,33 @@
       <div class="section-head">
         <h2>Как перейти из работы в чужой системе к жизни вокруг творчества?</h2>
       </div>
+      <div class="stack">
       <p class="lead">По статистике такой переход занимает около двух лет при движении в одиночку, но может проходить как существенно быстрее, например с гидом в группе, так и затянуться на семь лет.</p>
-      <p class="lead" style="margin-top: 20px;">Он состоит из нескольких этапов:</p>
+      <p class="lead">Он состоит из нескольких этапов:</p>
       <p class="stages">Самоопределение <span>›</span> первые деньги <span>›</span> создание продукта <span>›</span> построение системы</p>
+      <p class="lead">Если честно, то я и сам сейчас в переходе на стадии создания продукта. В середине 2024 я вышел из операционки бизнеса, который до этого строил восемь лет.</p>
+      <p class="lead">Я понял, что мне нравится работа с людьми. Даже будучи в своём бизнесе, я создавал разные клубы — по стоянию на гвоздях, −21 °С и первую версию уникалистов — и сам платил за участие в других клубах.</p>
 
-      <p class="lead" style="margin-top: 28px;">Если честно, то я и сам сейчас в переходе на стадии создания продукта. В середине 2024 я вышел из операционки бизнеса, который до этого строил восемь лет.</p>
-      <p class="lead" style="margin-top: 20px;">Я понял, что мне нравится работа с людьми. Даже будучи в своём бизнесе, я создавал разные клубы — по стоянию на гвоздях, −21 °С и первую версию уникалистов — и сам платил за участие в других клубах.</p>
-
-      <blockquote class="quote" style="margin: 32px 0; max-width: 760px;">
-        <img class="quote-photo" src="assets/sok-rooftop.jpg" alt="Клуб SOK на крыше" width="1280" height="858" loading="lazy">
-        <p>«Рома, благодарим тебя за все те дни, когда SOK был частью твоей жизни, за каждое мероприятие, начиная от гвоздестояния, заканчивая твоим новым, очень важным и классным проектом — уникалисты.</p>
-        <p>Для нас это была не просто коллаборация, не просто проведение клубных мероприятий, а именно создание безопасного и спокойного места, где каждый может не бояться быть собой и говорить о важном.</p>
-        <p>Ты уникальный, и благодаря тебе и твоим стараниям каждый в этом чате знает, что он тоже особенный.</p>
-        <p>Мы не прощаемся и искренне верим, что это были не последние твои мероприятия с нами, не последний твой клуб, ты всё так же остаёшься неотъемлемой частью SOK, частью нашей общей души.</p>
-        <p>Верим в тебя, в твои победы и ждём тебя в гости.»</p>
-        <cite>Твой SOK — из прощального письма клуба</cite>
-      </blockquote>
+      <figure class="letter">
+        <img class="letter-photo" src="assets/sok-rooftop.jpg" alt="Клуб SOK на крыше" width="1280" height="858" loading="lazy">
+        <div class="letter-body">
+          <figcaption class="letter-from">Твой SOK — из прощального письма клуба</figcaption>
+          <blockquote>
+            <p>«Рома, благодарим тебя за все те дни, когда SOK был частью твоей жизни, за каждое мероприятие, начиная от гвоздестояния, заканчивая твоим новым, очень важным и классным проектом — уникалисты.</p>
+            <details class="letter-more">
+              <summary><span class="letter-open">Читать письмо целиком</span><span class="letter-close">Свернуть</span></summary>
+              <p>Для нас это была не просто коллаборация, не просто проведение клубных мероприятий, а именно создание безопасного и спокойного места, где каждый может не бояться быть собой и говорить о важном.</p>
+              <p>Ты уникальный, и благодаря тебе и твоим стараниям каждый в этом чате знает, что он тоже особенный.</p>
+              <p>Мы не прощаемся и искренне верим, что это были не последние твои мероприятия с нами, не последний твой клуб, ты всё так же остаёшься неотъемлемой частью SOK, частью нашей общей души.</p>
+              <p>Верим в тебя, в твои победы и ждём тебя в гости.»</p>
+            </details>
+          </blockquote>
+        </div>
+      </figure>
 
       <p class="lead">Поэтому прямо сейчас я сам создаю дело вокруг своей личности на том, что мне нравится делать.</p>
-      <p class="lead" style="margin-top: 20px;">Я помню, каково это — делать первые шаги. Поэтому объединяю тех, кто готов отправиться в путь вместе.</p>
+      <p class="lead">Я помню, каково это — делать первые шаги. Поэтому объединяю тех, кто готов отправиться в путь вместе.</p>
+      </div>
     </div>
   </section>
 
@@ -122,22 +186,22 @@
         <div class="card card--a">
           <span class="card-num">Дверь А</span>
           <h3>У тебя уже есть своё дело, но ты чувствуешь себя не на своём месте</h3>
-          <p style="color: var(--light);">Ты делаешь что-то ценное для друзей, знакомых и близких бесплатно. Зарабатываешь чем-то другим и даже не думаешь, что твои навыки могут быть большой ценностью.</p>
-          <p style="margin-top: 14px;">Умеешь строить процессы, продавать, нанимать, считать юнит-экономику и не только. Не знаешь и не разрешаешь себе знать, что тебе действительно нравится делать как процесс.</p>
+          <p class="card-lead">Ты делаешь что-то ценное для друзей, знакомых и близких бесплатно. Зарабатываешь чем-то другим и даже не думаешь, что твои навыки могут быть большой ценностью.</p>
+          <p>Умеешь строить процессы, продавать, нанимать, считать юнит-экономику и не только. Не знаешь и не разрешаешь себе знать, что тебе действительно нравится делать как процесс.</p>
         </div>
         <div class="card card--b">
           <span class="card-num">Дверь Б</span>
           <h3>У тебя есть свой блог/аудитория/занятость, но нет выстроенного дела</h3>
-          <p style="color: var(--light);">Ты не хочешь быть инфоцыганом. И при этом хочешь зарабатывать на том, что тебе нравится делать.</p>
-          <p style="margin-top: 14px;">Обычно на этом всё и застревает. Непонятно, какой продукт можно сделать для других. Хотя продукт у тебя уже есть: ты делаешь что-то для себя и не показываешь никому, даже собственной аудитории.</p>
+          <p class="card-lead">Ты не хочешь быть инфоцыганом. И при этом хочешь зарабатывать на том, что тебе нравится делать.</p>
+          <p>Обычно на этом всё и застревает. Непонятно, какой продукт можно сделать для других. Хотя продукт у тебя уже есть: ты делаешь что-то для себя и не показываешь никому, даже собственной аудитории.</p>
         </div>
       </div>
 
-      <div style="margin-top: 32px;">
+      <div class="mt-l">
         <svg class="scheme scheme--wide" viewBox="0 0 720 160" shape-rendering="crispEdges" aria-hidden="true" focusable="false"><rect x="0" y="0" width="16" height="16" fill="#8e8e8e" fill-opacity="0.9"/><rect x="0" y="24" width="16" height="16" fill="#8e8e8e" fill-opacity="0.9"/><rect x="0" y="48" width="16" height="16" fill="#8e8e8e" fill-opacity="0.9"/><rect x="24" y="0" width="16" height="16" fill="#8e8e8e" fill-opacity="0.9"/><rect x="24" y="24" width="16" height="16" fill="#8e8e8e" fill-opacity="0.9"/><rect x="24" y="48" width="16" height="16" fill="#8e8e8e" fill-opacity="0.9"/><rect x="48" y="0" width="16" height="16" fill="#8e8e8e" fill-opacity="0.9"/><rect x="48" y="24" width="16" height="16" fill="#8e8e8e" fill-opacity="0.9"/><rect x="48" y="48" width="16" height="16" fill="#8e8e8e" fill-opacity="0.9"/><rect x="72" y="0" width="16" height="16" fill="#8e8e8e" fill-opacity="0.9"/><rect x="72" y="24" width="16" height="16" fill="#8e8e8e" fill-opacity="0.9"/><rect x="72" y="48" width="16" height="16" fill="#8e8e8e" fill-opacity="0.9"/><rect x="96" y="0" width="16" height="16" fill="#8e8e8e" fill-opacity="0.9"/><rect x="96" y="24" width="16" height="16" fill="#8e8e8e" fill-opacity="0.9"/><rect x="96" y="48" width="16" height="16" fill="#8e8e8e" fill-opacity="0.9"/><rect x="0" y="120" width="16" height="16" fill="#8e8e8e" fill-opacity="0.45"/><rect x="48" y="144" width="16" height="16" fill="#8e8e8e" fill-opacity="0.45"/><rect x="24" y="96" width="16" height="16" fill="#8e8e8e" fill-opacity="0.45"/><rect x="72" y="120" width="16" height="16" fill="#8e8e8e" fill-opacity="0.45"/><rect x="96" y="144" width="16" height="16" fill="#8e8e8e" fill-opacity="0.45"/><rect x="560" y="24" width="16" height="16" fill="#e8ff2b" fill-opacity="0.9"/><rect x="584" y="32" width="16" height="16" fill="#e8ff2b" fill-opacity="0.9"/><rect x="608" y="40" width="16" height="16" fill="#e8ff2b" fill-opacity="0.9"/><rect x="632" y="48" width="16" height="16" fill="#e8ff2b" fill-opacity="0.9"/><rect x="656" y="56" width="16" height="16" fill="#e8ff2b" fill-opacity="0.9"/><rect x="560" y="120" width="16" height="16" fill="#e8ff2b" fill-opacity="0.45"/><rect x="608" y="144" width="16" height="16" fill="#e8ff2b" fill-opacity="0.45"/><rect x="632" y="96" width="16" height="16" fill="#e8ff2b" fill-opacity="0.45"/><rect x="680" y="120" width="16" height="16" fill="#e8ff2b" fill-opacity="0.45"/><rect x="584" y="72" width="16" height="16" fill="#e8ff2b" fill-opacity="0.45"/><rect x="200" y="72" width="16" height="16" fill="#7a8239" fill-opacity="0.75"/><rect x="232" y="80" width="16" height="16" fill="#7a8239" fill-opacity="0.75"/><rect x="264" y="72" width="16" height="16" fill="#7a8239" fill-opacity="0.75"/><rect x="296" y="80" width="16" height="16" fill="#7a8239" fill-opacity="0.75"/><rect x="328" y="72" width="16" height="16" fill="#7a8239" fill-opacity="0.75"/><rect x="360" y="80" width="16" height="16" fill="#7a8239" fill-opacity="0.75"/><rect x="392" y="72" width="16" height="16" fill="#7a8239" fill-opacity="0.75"/><rect x="424" y="80" width="16" height="16" fill="#7a8239" fill-opacity="0.75"/><rect x="456" y="72" width="16" height="16" fill="#7a8239" fill-opacity="0.75"/><rect x="496" y="64" width="32" height="32" fill="#e8ff2b"/></svg>
       </div>
 
-      <div class="pull" style="margin-top: 32px;">
+      <div class="pull mt-l">
         <p>Ни один из вас никогда не строил дело вокруг себя.<br>Бизнес часто учат строить по готовым лекалам, а дело вокруг личности требует индивидуального подхода.</p>
       </div>
     </div>
@@ -170,7 +234,7 @@
           <span class="card-go">Тут больше →</span>
         </a>
       </div>
-      <p class="muted" style="margin-top: 24px; font-size: 14px;">Цены и условия — на страницах форматов.</p>
+      <p class="note mt-m">Цены и условия — на страницах форматов.</p>
     </div>
   </section>
 
@@ -179,7 +243,7 @@
     <div class="wrap">
       <h2>Всё начинается с разговора</h2>
       <p>Бесплатная консультация, 40 минут, онлайн. Определим, о чём ты мечтаешь и что нужно делать, чтобы к этому прийти.<br>Я скажу, что увидел, и предложу то, что подходит, — индивидуальную работу, среду или ничего из этого.</p>
-      <p style="font-weight: 800; margin-top: -16px;">Четыре места в месяц</p>
+      <p class="final-meta">Четыре места в месяц</p>
       <a class="btn" href="consultation.html">Записаться на консультацию</a>
     </div>
   </section>
